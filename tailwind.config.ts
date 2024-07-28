@@ -8,6 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Quicksand", "sans-serif"],
+      },
+      colors: {
+        'back-black': '#0f1217',
+        'nav-black': '#1e1e2a'
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
