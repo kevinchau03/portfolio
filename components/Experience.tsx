@@ -40,12 +40,12 @@ const experience = [
 ];
 
 const skills = [
-  { skill: 'Python' },
-  { skill: 'JavaScript' },
-  { skill: 'Django' },
-  { skill: 'React' },
-  { skill: 'Next.js' },
-  { skill: 'PostgreSQL' },
+  { skill: 'Python', level: 90 },
+  { skill: 'JavaScript', level: 85 },
+  { skill: 'Django', level: 80 },
+  { skill: 'React', level: 75 },
+  { skill: 'Next.js', level: 70 },
+  { skill: 'PostgreSQL', level: 60 },
 ];
 
 const variants = {
@@ -85,12 +85,30 @@ export function Experience() {
       </div>
       <div className="w-full lg:w-1/2 lg:px-4 mt-10 lg:mt-0">
         <h1 className="font-bold text-2xl mb-6 text-center lg:text-left">Skills</h1>
-        <div className="grid grid-cols-2 gap-4 items-center justify-center">
-          {skills.map((item, index) => (
-            <div key={`skill-${index}`} className="border-2 border-black rounded-lg p-4 font-bold text-center hover:text-sky-700">
-              <h2 className="text-xl text-black">{item.skill}</h2>
-            </div>
-          ))}
+        <div className="space-y-4">
+          {skills.map((item, index) => {
+            const { ref, inView } = useInView({
+              triggerOnce: false,
+              threshold: 0.5,
+            });
+
+            return (
+              <div key={`skill-${index}`} className="w-full">
+                <h2 className="text-xl text-black mb-2">{item.skill}</h2>
+                <motion.div
+                  ref={ref}
+                  className="relative w-full h-4 bg-sky-700 rounded-full"
+                  initial={{ width: 0 }}
+                  animate={{ width: inView ? `${item.level}%` : '0%' }}
+                  transition={{ duration: 1, ease: 'easeOut' }}
+                >
+                  <div className="absolute inset-0 flex items-center justify-center text-sm font-bold text-white">
+                    {item.level}%
+                  </div>
+                </motion.div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

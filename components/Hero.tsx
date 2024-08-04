@@ -1,55 +1,56 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import profileImage from '../public/profile.png';
-
-const titles = [
-  'Software Engineer',
-  'Full Stack Developer',
-  'Future Entrepreneur',
-  'Life Long Student'
-];
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useEffect } from "react";
 
 export function Hero() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const textIndex = useMotionValue(0);
+  const texts = [
+    "Software Engineer",
+    "Web Developer",
+    "Python Developer",
+    "React Developer",
+  ];
+
+  const baseText = useTransform(textIndex, (latest) => texts[latest] || "");
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const displayText = useTransform(rounded, (latest) =>
+    baseText.get().slice(0, latest)
+  );
+  const updatedThisRound = useMotionValue(true);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % titles.length);
-    }, 1800); // Change title every 3 seconds
-
-    return () => clearInterval(interval);
+    animate(count, 60, {
+      type: "tween",
+      duration: 1,
+      ease: "easeIn",
+      repeat: Infinity,
+      repeatType: "reverse",
+      repeatDelay: 1,
+      onUpdate(latest) {
+        if (updatedThisRound.get() === true && latest > 0) {
+          updatedThisRound.set(false);
+        } else if (updatedThisRound.get() === false && latest === 0) {
+          if (textIndex.get() === texts.length - 1) {
+            textIndex.set(0);
+          } else {
+            textIndex.set(textIndex.get() + 1);
+          }
+          updatedThisRound.set(true);
+        }
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div id="hero" className="flex justify-between items-center h-screen">
-      <div className="flex flex-col text-left w-1/2">
-        <h1 className="text-5xl font-medium">
-          Hey! My name's Kevin Chau and I am a(n)...<span className="blinking-cursor">|</span>
+    <div className="flex justify-center items-center h-screen w-full">
+      <div className="flex flex-col">
+        <h1 className="text-3xl font-bold text-center">
+          Hey, my name's Kevin Chau
         </h1>
-        <div className="overflow-hidden h-[60px] relative">
-          <div className="flex">
-            {titles.map((title, index) => (
-              <motion.div
-                key={index}
-                className="flex w-full absolute"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: currentIndex === index ? 1 : 0, x: currentIndex === index ? 0 : -20 }}
-                transition={{ duration: 0.5 }}
-              >
-                <p className="text-5xl text-sky-700 font-semibold">{title}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-        <br></br>
-        <div className="flex gap-6">
-          <button className="border-2 border-black rounded-lg p-2 font-bold hover:text-sky-700">Check Out My Portfolio</button>
-          <button className="border-2 border-black rounded-lg p-2 font-bold hover:text-sky-700">Contact Me</button>
-        </div>
+        <motion.span className="text-6xl text-sky-600">{displayText}</motion.span>
       </div>
-      <img src={profileImage.src} alt="profile" className='w-[380px] rounded-3xl'/>
     </div>
   );
-};
-
+}
