@@ -5,13 +5,11 @@
 html {
   scroll-behavior: smooth;
 }
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
 
-.blinking-cursor {
-  display: inline-block;
-  animation: blink 1.5s step-start infinite;
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+  background-color: #0D1117;
 }
