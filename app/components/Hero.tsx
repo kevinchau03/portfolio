@@ -6,7 +6,7 @@ export function Hero() {
     <div className="flex items-center justify-center h-screen px-6">
       <div className="text-center md:text-left w-full">
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-          Hello, nice to meet you. <br />
+          Hello! Nice to meet you. <br />
           I'm <span className="text-blue-600">Kevin Chau</span>.
         </h1>
         <p className="mt-6 text-lg leading-relaxed">
