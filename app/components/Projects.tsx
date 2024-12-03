@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export function Projects() {
   return (
-    <div id="projects" className="h-[60vh]">
+    <div id="projects" className="mb-12">
       <h1 className="text-center text-4xl font-bold mb-4 lg:text-left">My Project Gallery (WIP)</h1>
       <p className="text-center mb-8 lg:text-left lg:w-1/2">Check out the projects I've been working on recently! As you can tell I am really into web development.
         Currently learning Next.js and TypeScript. Looking to learn more about artificial intelligence and machine learning.
@@ -11,7 +11,7 @@ export function Projects() {
       <div className="grid grid-cols-1 justify-center items-center lg:grid-cols-3 gap-6">
         {/* Project 1 */}
         <div className="p-4 max-w-md">
-          <div className="flex rounded-lg h-full p-8 flex-col border-2 border-white
+          <div className="flex rounded-lg h-full p-8 flex-col
                           hover:bg-gray-700 transform hover:-translate-y-2 
                           transition duration-300 ease-in-out">
             <div className="flex items-center mb-3">
@@ -36,7 +36,7 @@ export function Projects() {
         </div>
         {/* Project 2 */}
         <div className="p-4 max-w-md">
-          <div className="flex rounded-lg h-full p-8 flex-col border-2 border-white
+          <div className="flex rounded-lg h-full p-8 flex-col
                           hover:bg-gray-700 transform hover:-translate-y-2 
                           transition duration-300 ease-in-out">
             <div className="flex items-center mb-3">
@@ -63,7 +63,7 @@ export function Projects() {
         </div>
         {/* Project 3 */}
         <div className="p-4 max-w-md">
-          <div className="flex rounded-lg h-full p-8 flex-col border-2 border-white
+          <div className="flex rounded-lg h-full p-8 flex-col
                           hover:bg-gray-700 transform hover:-translate-y-2 
                           transition duration-300 ease-in-out">
             <div className="flex items-center mb-3">
@@ -81,7 +81,7 @@ export function Projects() {
               <p className="leading-relaxed text-base">
                 Keep track of your favourite anime shows and movies.
               </p>
-              <a href="https://news-app-seven-rose.vercel.app/" target="_blank" className="mt-3 hover:text-blue-600 inline-flex items-center">
+              <a href="https://github.com/kevinchau03/AnimeBuddy" target="_blank" className="mt-3 hover:text-blue-600 inline-flex items-center">
                 Learn More
                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
                   strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">

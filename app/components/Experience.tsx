@@ -1,6 +1,6 @@
 export function Experience() {
   return (
-    <div id="experience" className="flex flex-col h-[80vh]">
+    <div id="experience" className="flex flex-col h-screen">
       <h1 className="text-center text-4xl font-bold mb-4 lg:text-left">My Software Engineering Journey</h1>
       {/* Timeline */}
       <div className="flex flex-col">
