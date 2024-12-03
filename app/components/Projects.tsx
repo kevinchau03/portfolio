@@ -3,12 +3,12 @@ import Image from 'next/image'
 
 export function Projects() {
   return (
-    <div id="projects">
-      <h1 className="text-4xl font-bold mb-4">03. A Showcase of My Projects</h1>
-      <p className="w-1/2 mb-8">Check out the projects I've been working on recently! As you can tell I am really into web development.
+    <div id="projects" className="h-[60vh]">
+      <h1 className="text-center text-4xl font-bold mb-4 lg:text-left">My Project Gallery (WIP)</h1>
+      <p className="text-center mb-8 lg:text-left lg:w-1/2">Check out the projects I've been working on recently! As you can tell I am really into web development.
         Currently learning Next.js and TypeScript. Looking to learn more about artificial intelligence and machine learning.
       </p>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 justify-center items-center lg:grid-cols-3 gap-6">
         {/* Project 1 */}
         <div className="p-4 max-w-md">
           <div className="flex rounded-lg h-full p-8 flex-col border-2 border-white
@@ -41,7 +41,7 @@ export function Projects() {
                           transition duration-300 ease-in-out">
             <div className="flex items-center mb-3">
               <div className="w-12 h-12 mr-3 inline-flex items-center justify-center rounded-full bg-blue-600 text-white flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
                   <path d="M18 14h-8" /><path d="M15 18h-5" /><path d="M10 6h8v4h-8V6Z" />
                 </svg>
               </div>

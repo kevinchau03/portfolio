@@ -4,6 +4,8 @@
 
 html {
   scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;;
 }
 
 body {
@@ -12,4 +14,11 @@ body {
   line-height: 1.5;
   color: white;
   background-color: #0D1117;
+}
+
+.custom-class .social-svg-icon {
+  fill: rgb(255, 255, 255);
+}
+.custom-class:hover .social-svg-icon {
+  fill: rgb(0, 119, 255);
 }
