@@ -4,13 +4,14 @@ import Image from 'next/image'
 export function Projects() {
   return (
     <div id="projects" className="mb-12">
-      <h1 className="text-center text-4xl font-bold mb-4 lg:text-left">My Project Gallery (WIP)</h1>
-      <p className="text-center mb-8 lg:text-left lg:w-1/2">Check out the projects I've been working on recently! As you can tell I am really into web development.
+      <h1 className="text-center text-4xl font-bold mb-4 lg:text-left">My Project Gallery</h1>
+      <p className="text-center mb-8 lg:text-left lg:w-1/2">Check out the projects I've been working on recently! I like to build efficient software that makes peoeple's lives easier in some capacity.
+        As you can tell I am really into web development.
         Currently learning Next.js and TypeScript. Looking to learn more about artificial intelligence and machine learning.
       </p>
       <div className="grid grid-cols-1 justify-center items-center lg:grid-cols-3 gap-6">
         {/* Project 1 */}
-        <div className="p-4 max-w-md">
+        <div className="max-w-md items-center justify-center">
           <div className="flex rounded-lg h-full p-8 flex-col
                           hover:bg-gray-700 transform hover:-translate-y-2 
                           transition duration-300 ease-in-out">

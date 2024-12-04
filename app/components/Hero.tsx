@@ -10,7 +10,7 @@ export function Hero() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
           Hello! I'm <span className="text-blue-600">Kevin Chau</span>.
         </h1>
-        <p className="mt-6 text-base sm:text-lg leading-relaxed">
+        <p className="hidden mt-6 text-base sm:text-lg leading-relaxed lg:block">
           I'm a fourth-year Computer Science student at Western University. My love for coding began
           when I discovered YouTube to MP3—a lifesaver for my 12-year-old self.
           <br />
@@ -50,13 +50,13 @@ export function Hero() {
       </div>
 
       {/* Right Image Section */}
-      <div className="md:w-1/2 flex justify-center">
+      <div className="md:w-1/2 mb-6 flex justify-center">
         <Image
           src="/profile.png"
           alt="Kevin Chau"
           width={400}
           height={400}
-          className="rounded-lg shadow-lg"
+          className="rounded-xl shadow-lg"
         />
       </div>
     </div>
