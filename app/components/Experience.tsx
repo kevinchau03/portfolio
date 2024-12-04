@@ -1,24 +1,31 @@
 'use client'
 import Image from 'next/image';
 import { motion, useScroll, useSpring } from 'motion/react';
+import { useRef } from 'react';
 
 export function Experience() {
-  const { scrollYProgress } = useScroll();
+  const experienceRef = useRef(null);
+  const { scrollYProgress } = useScroll(
+    {
+      target: experienceRef,
+      offset: ["end end", "start start"]
+    }
+  );
   const scaleY = useSpring(scrollYProgress, { stiffness: 400, damping: 90 });
 
   return (
-    <div id="experience" className="flex flex-col gap-6 mb-6">
+    <div id="experience" className="flex flex-col gap-6 mb-12">
       <h1 className="text-4xl font-bold mb-4">My Software Engineering Journey</h1>
-      <div className="relative h-screen">
+      <div ref={experienceRef} className="relative h-max">
         {/* Timeline */}
         <motion.div
-          className="bg-blue-600 h-[90%] w-1 absolute top-0 left-0 origin-top"
+          className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-full w-1 absolute top-0 left-0 origin-top rounded-full"
           style={{ scaleY }}
         />
         <div className="flex flex-col gap-10 ml-10">
           {/* Experience 1 */}
           <div className="flex flex-col">
-            <div className="flex justify-between">
+            <div className="flex flex-col lg:justify-between lg:flex-row">
               <div className="flex items-center gap-2">
                 <Image src="/Western.png" alt="Western University" width={50} height={50} />
                 <h2 className="text-lg font-bold">Work Study Student @ Western University</h2>

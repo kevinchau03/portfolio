@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function Footer() {
     return (
-        <footer className="flex items-center text-center h-[150px] justify-between b-top-2 w-full p-4 border-t-2 border-gray-200">
+        <footer className="flex items-center text-center h-[150px] justify-between bg-gray-600 w-full p-4">
             <div className="flex gap-4">
                 <Link href="#experience" className="hover:text-blue-600">
                     Experience

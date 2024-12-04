@@ -3,7 +3,6 @@ import { Hero } from '@/app/components/Hero';
 import { Experience }  from '@/app/components/Experience';
 import { Projects } from '@/app/components/Projects';
 import { Footer } from '@/app/components/Footer';
-import { Happy } from '@/app/components/Happy';
 
 export default function Page() {
     return (
@@ -11,7 +10,6 @@ export default function Page() {
             <Hero />
             <Projects />
             <Experience />
-            <Happy />
             <Footer />
         </main>
     );

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export function Hero() {
   return (
-    <div id="hero" className="flex flex-col-reverse md:flex-row items-center justify-center h-screen px-6 mb-10">
+    <div id="hero" className="flex flex-col-reverse md:flex-row items-center justify-center h-screen">
       {/* Info Section */}
       <div className="text-center md:text-left w-full md:w-1/2">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
@@ -48,12 +48,12 @@ export function Hero() {
         </div>
       </div>
       {/* Right Image Section */}
-      <div className="md:w-1/2 mb-6 flex justify-center">
+      <div className="w-full md:w-1/2 mb-6 flex justify-center">
         <Image
           src="/profile.png"
           alt="Kevin Chau"
-          width={400}
-          height={400}
+          width={375}
+          height={375}
           className="rounded-xl shadow-lg"
         />
       </div>
