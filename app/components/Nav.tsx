@@ -8,14 +8,14 @@ const Nav = () => {
         <Link href="#hero" className="hover:text-blue-600 font-bold text-xl">
           Kevin Chau
         </Link>
-        <Link href="#experience" className="hover:text-blue-600">
-          Experience
-        </Link>
         <Link href="#projects" className="hover:text-blue-600">
           Projects
         </Link>
+        <Link href="#experience" className="hover:text-blue-600">
+          Experience
+        </Link>
         <Link href="#happy" className="hover:text-blue-600">
-          About Me 
+          Passion
         </Link>
       </div>
     </div>
