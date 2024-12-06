@@ -22,15 +22,5 @@ li {
   fill: rgb(0, 0, 0);
 }
 .custom-class:hover {
-  fill: rgb(0, 119, 255);
-}
-
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: blue;
-  transform-origin: 0%;
+  fill: #059669;
 }

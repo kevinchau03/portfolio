@@ -4,7 +4,7 @@ export function Experience() {
 
   return (
     <div id="experience" className="flex flex-col gap-6 mb-12">
-      <h1 className="text-4xl font-bold mb-4">My Software Engineering Journey</h1>
+      <h1 className="text-4xl font-bold mb-4 text-accent">My Software Engineering Journey</h1>
       <div className="flex flex-col gap-10">
         {/* Experience 1 */}
         <div className="flex flex-col">

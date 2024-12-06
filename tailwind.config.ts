@@ -13,7 +13,8 @@ const config: Config = {
       },
       colors: {
         'back-black': '#0f1217',
-        'nav-black': '#1e1e2a'
+        'nav-black': '#1e1e2a',
+        'accent': '#059669',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
