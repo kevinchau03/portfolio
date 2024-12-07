@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Passion() {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen px-4">
+        <div className="flex flex-col items-center justify-center min-h-screen px-4 mt-10">
             <div className="flex flex-col gap-4 max-w-screen-md">
                 <p className="text-slate-400">December 11th 2024</p>
                 <h1 className="text-4xl font-bold mb-4">The Curse Of Being Blessed With Opportunities.</h1>

@@ -9,10 +9,12 @@ export default function Page() {
                 <p className="text-center mb-8 lg:text-left lg:w-1/2">One of my outlets is in the form of creative writing. A way for me to get my thoughts out. Feel free to read through these articles.</p>
             </div>
             <div className="flex flex-col gap-6">
-                <Link href="/passion/careers" className="flex gap-8 hover:bg-card p-2 rounded-lg">
-                    <div>
-                        <h3 className="font-medium text-md">My Experience As An Aspiring Software Engineer.</h3>
-                        <p className="text-slate-400">Read through as I give insight on what its like to study for a software engineering job in today's age.</p>
+                <Link href="/passion/careers" className="hover:bg-card p-2 rounded-lg">
+                    <div className="flex flex-col gap-4 w-1/2">
+                        <div>
+                            <h3 className="font-medium text-md">My Experience As An Aspiring Software Engineer.</h3>
+                            <p className="text-slate-400">Read through as I give insight on what its like to study for a software engineering job in today's age.</p>
+                        </div>
                         <div className="inline-flex items-center text-accent">
                             Read article
                             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
@@ -22,23 +24,12 @@ export default function Page() {
                         </div>
                     </div>
                 </Link>
-                <Link href="/passion/family" className="flex gap-8 hover:bg-card p-2 rounded-lg">
-                    <div>
-                        <h3 className="font-medium text-md">The Curse Of Being Blessed With Opportunities.</h3>
-                        <p className="text-slate-400">I explore my past and all the things that lead me to where I am today</p>
-                        <div className="inline-flex items-center text-accent">
-                            Read Article
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
-                                strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
+                <Link href="/passion/family" className="hover:bg-card p-2 rounded-lg">
+                    <div className="flex flex-col gap-4 w-1/2">
+                        <div>
+                            <h3 className="font-medium text-md">The Curse Of Being Blessed With Opportunities.</h3>
+                            <p className="text-slate-400">I explore my past and all the things that lead me to where I am today</p>
                         </div>
-                    </div>
-                </Link>
-                <Link href="/passion/family" className="flex gap-8 hover:bg-card p-2 rounded-lg">
-                    <div>
-                        <h3 className="font-medium text-md">Grinding Leetcode.</h3>
-                        <p className="text-slate-400">Let us further understand what grinding leetcode really means.</p>
                         <div className="inline-flex items-center text-accent">
                             Read Article
                             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
