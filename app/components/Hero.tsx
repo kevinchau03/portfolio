@@ -5,11 +5,11 @@ export function Hero() {
   return (
     <div id="hero" className="flex flex-col-reverse md:flex-row items-center justify-center h-screen">
       {/* Info Section */}
-      <div className="text-center md:text-left w-full md:w-1/2">
+      <div className="text-center md:text-left w-full md:w-3/4">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
           Hello! I'm <span className="text-accent">Kevin Chau</span>.
         </h1>
-        <p className="hidden mt-6 text-base sm:text-lg leading-relaxed lg:block">
+        <p className="hidden mt-6 leading-relaxed lg:block">
           I'm a fourth-year Computer Science student at Western University. My love for coding began
           when I discovered YouTube to MP3—a lifesaver for my 12-year-old self.
           <br />
@@ -48,7 +48,7 @@ export function Hero() {
         </div>
       </div>
       {/* Right Image Section */}
-      <div className="w-full md:w-1/2 mb-6 flex justify-center">
+      <div className="w-full md:w-1/2 mb-6 flex justify-center lg:mb-0">
         <Image
           src="/portrait.JPG"
           alt="Kevin Chau"
