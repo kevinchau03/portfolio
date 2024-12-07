@@ -11,7 +11,7 @@ html {
 
 body {
   color: white;
-  background-color: #0D1117;
+  background-color: #090c10;
 }
 
 li {
@@ -19,8 +19,8 @@ li {
 }
 
 .custom-class {
-  fill: rgb(0, 0, 0);
+  fill: #059669;
 }
 .custom-class:hover {
-  fill: #059669;
+  fill: #000;
 }

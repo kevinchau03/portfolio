@@ -48,7 +48,7 @@ export function Projects() {
   }, []);
 
   return (
-    <div id="projects" className="mb-12" ref={ref}>
+    <div id="projects" className="mb-24" ref={ref}>
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={isVisible ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
@@ -70,8 +70,8 @@ export function Projects() {
         animate={isVisible ? "visible" : "hidden"}
       >
         {/* Project 1 */}
-        <motion.div variants={projectVariants} className="p-4 max-w-md">
-          <div className="flex rounded-lg h-full p-8 flex-col
+        <motion.div variants={projectVariants} className="max-w-md">
+          <div className="flex rounded-lg h-full p-8 flex-col bg-card
                           hover:bg-gray-700 transform hover:-translate-y-2 
                           transition duration-300 ease-in-out">
             <div className="flex items-center mb-3">
@@ -95,8 +95,8 @@ export function Projects() {
           </div>
         </motion.div>
         {/* Repeat for Project 2 and Project 3 */}
-        <motion.div variants={projectVariants} className="p-4 max-w-md">
-          <div className="flex rounded-lg h-full p-8 flex-col
+        <motion.div variants={projectVariants} className="max-w-md">
+          <div className="flex rounded-lg h-full p-8 flex-col bg-card
                           hover:bg-gray-700 transform hover:-translate-y-2 
                           transition duration-300 ease-in-out">
             <div className="flex items-center mb-3">
@@ -125,8 +125,8 @@ export function Projects() {
           </div>
         </motion.div>
         {/* Repeat for Project 3 */}
-        <motion.div variants={projectVariants} className="p-4 max-w-md">
-          <div className="flex rounded-lg h-full p-8 flex-col
+        <motion.div variants={projectVariants} className="max-w-md">
+          <div className="flex rounded-lg h-full p-8 flex-col bg-card
                           hover:bg-gray-700 transform hover:-translate-y-2 
                           transition duration-300 ease-in-out">
             <div className="flex items-center mb-3">
