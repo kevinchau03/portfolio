@@ -1,9 +1,8 @@
 import React from 'react';
-import Link from 'next/link';
 
 export function Footer() {
     return (
-        <footer className="flex flex-col items-center text-center h-[100px] lg:justify-between w-full p-4 border-t border-gray-200 lg:flex-row">
+        <footer className="flex flex-col items-center text-center h-[100px] lg:justify-between w-full p-4 border-t border-gray-200 lg:flex-row mt-auto">
             <p>@2024 Kevin Chau. Have a great day!</p>
             <div className="flex gap-4">
                 <button className="bg-accent p-1 items-center justify-center rounded-md">
@@ -15,7 +14,6 @@ export function Footer() {
                     </a>
                 </button>
             </div>
-        </footer >
+        </footer>
     );
-};
-
+}

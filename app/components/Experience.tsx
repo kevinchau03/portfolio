@@ -1,9 +1,13 @@
-'use client'
-import React, { useState } from 'react';
+'use client';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { motion, useAnimation } from 'framer-motion';
 
 export function Experience() {
   const [expanded, setExpanded] = useState<number | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const controls = useAnimation();
+  const [isVisible, setIsVisible] = useState(false);
 
   const experiences = [
     {
@@ -48,27 +52,63 @@ export function Experience() {
     },
   ];
 
-  interface Experience {
-    id: number;
-    title: string;
-    role: string;
-    period: string;
-    duration: string;
-    location: string;
-    image: string;
-    details: string;
-  }
-
   const handleToggle = (id: number): void => {
     setExpanded((prev) => (prev === id ? null : id));
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  },);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Stagger effect
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
+
   return (
-    <div id="experience" className="flex flex-col gap-6 mb-12">
+    <div id="experience" className="flex flex-col gap-6 mb-24" ref={ref}>
       <h1 className="text-4xl font-bold mb-4 text-accent">My Software Engineering Journey</h1>
-      <div className="flex flex-col gap-4">
+      <motion.div
+        className="flex flex-col gap-4"
+        variants={containerVariants}
+        initial="hidden"
+        animate={isVisible ? 'visible' : 'hidden'}
+      >
         {experiences.map((exp) => (
-          <div key={exp.id} className="flex flex-col rounded-lg bg-card p-3">
+          <motion.div
+            key={exp.id}
+            className="flex flex-col rounded-lg bg-card p-3"
+            variants={cardVariants}
+          >
             <div
               className="flex cursor-pointer"
               onClick={() => handleToggle(exp.id)}
@@ -94,16 +134,16 @@ export function Experience() {
             </div>
             <div
               className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-                expanded === exp.id ? "max-h-40" : "max-h-0"
+                expanded === exp.id ? 'max-h-40' : 'max-h-0'
               }`}
             >
               <div className="mt-4 p-4 bg-muted rounded-lg">
                 <p className="text-sm">{exp.details}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

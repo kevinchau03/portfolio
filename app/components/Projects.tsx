@@ -32,7 +32,7 @@ export function Projects() {
         }
       },
       {
-        threshold: 0.2,
+        threshold: 0.3,
       }
     );
 
@@ -48,7 +48,7 @@ export function Projects() {
   }, []);
 
   return (
-    <div id="projects" className="mb-24" ref={ref}>
+    <div id="projects" className="mb-32" ref={ref}>
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={isVisible ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
@@ -78,13 +78,13 @@ export function Projects() {
               <div className="w-12 h-12 mr-3 inline-flex items-center justify-center text-white flex-shrink-0">
                 <Image src="/Milo.jpg" alt="Milo" width={100} height={100} className="rounded-full" />
               </div>
-              <h2 className="text-lg font-medium">Milo Financial</h2>
+              <h2 className="text-lg font-bold">Milo Financial</h2>
             </div>
             <div className="flex flex-col justify-between flex-grow">
-              <p className="leading-relaxed text-base">
+              <p className="leading-relaxed text-slate-400">
                 Your own personal AI financial assistant. Start saving better with Milo.
               </p>
-              <a href="https://hack-western11.vercel.app/" target="_blank" className="mt-3 hover:text-accent inline-flex items-center">
+              <a href="https://hack-western11.vercel.app/" target="_blank" className="mt-3 text-accent hover:text-white inline-flex items-center">
                 Learn More
                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
                   strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
@@ -94,27 +94,25 @@ export function Projects() {
             </div>
           </div>
         </motion.div>
-        {/* Repeat for Project 2 and Project 3 */}
+        {/* Repeat for Project 2 */}
         <motion.div variants={projectVariants} className="max-w-md">
           <div className="flex rounded-lg h-full p-8 flex-col bg-card
                           hover:bg-gray-700 transform hover:-translate-y-2 
                           transition duration-300 ease-in-out">
             <div className="flex items-center mb-3">
               <div className="w-12 h-12 mr-3 inline-flex items-center justify-center rounded-full bg-accent text-white flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clapperboard">
-                  <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z" />
-                  <path d="m6.2 5.3 3.1 3.9" />
-                  <path d="m12.4 3.4 3.1 4" />
-                  <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
-                </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-newspaper"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+              <path d="M18 14h-8"/>
+              <path d="M15 18h-5"/>
+              <path d="M10 6h8v4h-8V6Z"/></svg>
               </div>
-              <h2 className="text-lg font-medium">Uplifted Echoes</h2>
+              <h2 className="text-lg font-bold">Uplifted Echoes</h2>
             </div>
             <div className="flex flex-col justify-between flex-grow">
-              <p className="leading-relaxed text-base">
+              <p className="leading-relaxed text-slate-400">
                 A real-time news website that provides the latest news from around the world.
               </p>
-              <a href="https://news-app-seven-rose.vercel.app/" target="_blank" className="mt-3 hover:text-accent inline-flex items-center">
+              <a href="https://news-app-seven-rose.vercel.app/" target="_blank" className="mt-3 text-accent hover:text-white inline-flex items-center">
                 Learn More
                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
                   strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
@@ -138,13 +136,13 @@ export function Projects() {
                   <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
                 </svg>
               </div>
-              <h2 className="text-lg font-medium">Anime Buddy</h2>
+              <h2 className="text-lg font-bold">Anime Buddy</h2>
             </div>
             <div className="flex flex-col justify-between flex-grow">
-              <p className="leading-relaxed text-base">
+              <p className="leading-relaxed text-slate-400">
                 A chrome extension that lets users keep track of their favourite shows and movies.
               </p>
-              <a href="https://github.com/kevinchau03/AnimeBuddy" target="_blank" className="mt-3 hover:text-accent inline-flex items-center">
+              <a href="https://github.com/kevinchau03/AnimeBuddy" target="_blank" className="mt-3 text-accent hover:text-white inline-flex items-center">
                 Learn More
                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
                   strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
