@@ -12,7 +12,7 @@ const Nav = () => {
   }
 
   return (
-    <nav className="sticky top-3 inset-x-0 w-full mx-auto z-50 rounded-2xl bg-card px-4 py-3 transition-all duration-300">
+    <nav className="sticky top-3 inset-x-0 w-full mx-auto z-50 rounded-2xl border border-slate bg-card px-4 py-3 transition-all duration-300">
       <div className="flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold text-accent">
           kevchaudev.

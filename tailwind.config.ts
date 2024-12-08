@@ -15,7 +15,8 @@ const config: Config = {
         'back-black': '#0f1217',
         'nav-black': '#1e1e2a',
         'accent': '#059669',
-        'card': '#131921'
+        'card': '#131921',
+        'muted': '#64748b'
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -2,13 +2,13 @@ import Image from 'next/image';
 
 export function Hero() {
   return (
-    <div id="hero" className="flex flex-col-reverse md:flex-row items-center justify-center h-[90vh]">
+    <div id="hero" className="flex flex-col-reverse md:flex-row items-center justify-center h-[95vh]">
       {/* Info Section */}
       <div className="text-center md:text-left w-full md:w-3/4">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
           Hello! I'm <span className="text-accent">Kevin Chau</span>.
         </h1>
-        <p className="hidden mt-6 leading-relaxed lg:block">
+        <p className="hidden mt-6 leading-relaxed md:block">
           Welcome to my little digital corner! Where you can learn a little bit about me and read about my thoughts.
           <br />
           <br />

@@ -32,7 +32,7 @@ export function Projects() {
         }
       },
       {
-        threshold: 0.2,
+        threshold: 0.5,
       }
     );
 
@@ -48,7 +48,7 @@ export function Projects() {
   }, []);
 
   return (
-    <div id="projects" className="mb-32" ref={ref}>
+    <div id="projects" className="mb-32">
         <h1 className="text-xl font-bold mb-4 lg:text-left lg:text-4xl text-accent">My Project Gallery</h1>
         <p className="text-sm mb-8 lg:text-left lg:w-1/2 lg:text-base">
           Check out the projects I've been working on recently! I like to build efficient software
@@ -61,6 +61,7 @@ export function Projects() {
         variants={containerVariants}
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
+        ref={ref}
       >
         {/* Project 1 */}
         <motion.div variants={projectVariants} className="max-w-md">
@@ -74,7 +75,7 @@ export function Projects() {
               <h2 className="text-lg font-bold">Milo Financial</h2>
             </div>
             <div className="flex flex-col justify-between flex-grow">
-              <p className="leading-relaxed text-slate-400">
+              <p className="leading-relaxed text-muted">
                 Your own personal AI financial assistant. Start saving better with Milo.
               </p>
               <a href="https://hack-western11.vercel.app/" target="_blank" className="mt-3 text-accent hover:text-white inline-flex items-center">
@@ -102,7 +103,7 @@ export function Projects() {
               <h2 className="text-lg font-bold">Uplifted Echoes</h2>
             </div>
             <div className="flex flex-col justify-between flex-grow">
-              <p className="leading-relaxed text-slate-400">
+              <p className="leading-relaxed text-muted">
                 A real-time news website that provides the latest news from around the world.
               </p>
               <a href="https://news-app-seven-rose.vercel.app/" target="_blank" className="mt-3 text-accent hover:text-white inline-flex items-center">
@@ -132,7 +133,7 @@ export function Projects() {
               <h2 className="text-lg font-bold">Anime Buddy</h2>
             </div>
             <div className="flex flex-col justify-between flex-grow">
-              <p className="leading-relaxed text-slate-400">
+              <p className="leading-relaxed text-muted">
                 A chrome extension that lets users keep track of their favourite shows and movies.
               </p>
               <a href="https://github.com/kevinchau03/AnimeBuddy" target="_blank" className="mt-3 text-accent hover:text-white inline-flex items-center">

@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
+import { ChevronRight, ChevronDown } from 'lucide-react';
 
 export function Experience() {
   const [expanded, setExpanded] = useState<number | null>(null);
@@ -64,7 +65,7 @@ export function Experience() {
           setIsVisible(false);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.5 }
     );
 
     if (ref.current) {
@@ -94,13 +95,14 @@ export function Experience() {
   };
 
   return (
-    <div id="experience" className="flex flex-col gap-6 mb-24" ref={ref}>
+    <div id="experience" className="flex flex-col gap-6 mb-24">
       <h1 className="text-xl font-bold mb-4 text-accent lg:text-4xl">My Software Engineering Journey</h1>
       <motion.div
         className="flex flex-col gap-4"
         variants={containerVariants}
         initial="hidden"
         animate={isVisible ? 'visible' : 'hidden'}
+        ref={ref}
       >
         {experiences.map((exp) => (
           <motion.div
@@ -116,28 +118,33 @@ export function Experience() {
               <div className="group ml-4 flex-grow flex-col items-center">
                 <div className="flex flex-col">
                   <div className="flex items-center justify-between gap-x-2">
-                    <h2 className="inline-flex items-center justify-center font-semibold leading-none text-md">
+                    <h2 className="inline-flex items-center justify-center font-medium leading-none text-md">
                       {exp.title}
+                      {expanded === exp.id ? (
+                        <ChevronDown size={16} className="ml-2" />
+                      ) : (
+                        <ChevronRight size={16} className="ml-2" />
+                      )}
+
                     </h2>
                     <div className="text-right tabular-nums">
                       {exp.period}
                     </div>
                   </div>
                   <div className="flex items-center justify-between gap-x-2">
-                    <p className="text-sm">{exp.role}</p>
-                    <p className="text-right text-sm">{exp.duration}</p>
+                    <p className="text-sm text-muted">{exp.role}</p>
+                    <p className="text-right text-sm text-muted">{exp.duration}</p>
                   </div>
-                  <p className="text-sm">{exp.location}</p>
+                  <p className="text-sm text-muted">{exp.location}</p>
                 </div>
               </div>
             </div>
             <div
-              className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-                expanded === exp.id ? 'max-h-40' : 'max-h-0'
-              }`}
+              className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${expanded === exp.id ? 'max-h-40' : 'max-h-0'
+                }`}
             >
-              <div className="mt-4 p-4 bg-muted rounded-lg">
-                <p className="text-sm">{exp.details}</p>
+              <div className="mt-4 p-4 rounded-lg">
+                <p className="text-sm text-muted">{exp.details}</p>
               </div>
             </div>
           </motion.div>
