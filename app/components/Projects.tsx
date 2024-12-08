@@ -49,11 +49,6 @@ export function Projects() {
 
   return (
     <div id="projects" className="mb-32" ref={ref}>
-      <motion.div
-        initial={{ x: -100, opacity: 0 }}
-        animate={isVisible ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
-        transition={{ ease: "easeOut", duration: 1 }}
-      >
         <h1 className="text-xl font-bold mb-4 lg:text-left lg:text-4xl text-accent">My Project Gallery</h1>
         <p className="text-sm mb-8 lg:text-left lg:w-1/2 lg:text-base">
           Check out the projects I've been working on recently! I like to build efficient software
@@ -61,8 +56,6 @@ export function Projects() {
           development. Currently learning Next.js and TypeScript. Looking to learn more about
           artificial intelligence and machine learning.
         </p>
-      </motion.div>
-
       <motion.div
         className="grid grid-cols-1 justify-center items-center lg:grid-cols-3 gap-6"
         variants={containerVariants}

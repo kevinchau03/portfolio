@@ -16,7 +16,7 @@ export function Experience() {
       period: "Sept 2024 - Present",
       duration: "4 Months",
       location: "London, Ontario",
-      image: "/Western.png",
+      image: "https://www.uwo.ca/img/homepage/2017/logo/mustangs_logo.svg",
       details: "Working as a research assistant in the department of computer science. Assisting in researching MQTT protocols and how it could be used with our ESP module to track data in harsh environments.",
     },
     {
@@ -112,22 +112,22 @@ export function Experience() {
               className="flex cursor-pointer"
               onClick={() => handleToggle(exp.id)}
             >
-              <Image src={exp.image} alt={exp.title} width={30} height={30} className="rounded-full" />
+              <Image src={exp.image} alt={exp.title} width={50} height={50} className="rounded-full" />
               <div className="group ml-4 flex-grow flex-col items-center">
                 <div className="flex flex-col">
                   <div className="flex items-center justify-between gap-x-2">
-                    <h3 className="inline-flex items-center justify-center font-semibold leading-none">
+                    <h2 className="inline-flex items-center justify-center font-semibold leading-none text-md">
                       {exp.title}
-                    </h3>
-                    <div className="text-right tabular-nums text-muted-foreground">
+                    </h2>
+                    <div className="text-right tabular-nums">
                       {exp.period}
                     </div>
                   </div>
                   <div className="flex items-center justify-between gap-x-2">
-                    <div className="text-sm">{exp.role}</div>
-                    <div className="text-right text-sm">{exp.duration}</div>
+                    <p className="text-sm">{exp.role}</p>
+                    <p className="text-right text-sm">{exp.duration}</p>
                   </div>
-                  <div className="text-sm">{exp.location}</div>
+                  <p className="text-sm">{exp.location}</p>
                 </div>
               </div>
             </div>
