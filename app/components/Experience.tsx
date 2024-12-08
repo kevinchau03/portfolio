@@ -6,7 +6,6 @@ import { motion, useAnimation } from 'framer-motion';
 export function Experience() {
   const [expanded, setExpanded] = useState<number | null>(null);
   const ref = useRef<HTMLDivElement | null>(null);
-  const controls = useAnimation();
   const [isVisible, setIsVisible] = useState(false);
 
   const experiences = [
@@ -65,7 +64,7 @@ export function Experience() {
           setIsVisible(false);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.7 }
     );
 
     if (ref.current) {

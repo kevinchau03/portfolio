@@ -1,18 +1,32 @@
 import React from 'react';
+import { SocialIcon } from 'react-social-icons';
 
 export function Footer() {
     return (
         <footer className="flex flex-col items-center text-center h-[100px] lg:justify-between w-full p-4 border-t border-gray-200 lg:flex-row mt-auto">
             <p>@2024 Kevin Chau. Have a great day!</p>
-            <div className="flex gap-4">
-                <button className="bg-accent p-1 items-center justify-center rounded-md">
-                    <a href="mailto:kchau57@uwo.com">E-mail Me</a>
-                </button>
-                <button className="bg-accent p-1 items-center justify-center rounded-md">
-                    <a href="/KevinChau_Resume.pdf" download>
-                        Download My Resume
-                    </a>
-                </button>
+            <div className="flex justify-center md:justify-start gap-4">
+                <SocialIcon
+                    url="https://www.linkedin.com/in/kevin-chau03/"
+                    target="_blank"
+                    className="custom-class"
+                    fgColor="currentColor"
+                    bgColor="#"
+                />
+                <SocialIcon
+                    url="https://github.com/kevinchau03"
+                    target="_blank"
+                    className="custom-class"
+                    fgColor="currentColor"
+                    bgColor="#"
+                />
+                <SocialIcon
+                    url="https://www.instagram.com/kevin.chau03/"
+                    target="_blank"
+                    className="custom-class"
+                    fgColor="currentColor"
+                    bgColor="#"
+                />
             </div>
         </footer>
     );

@@ -12,11 +12,10 @@ const Nav = () => {
   }
 
   return (
-    <nav className="fixed top-3 inset-x-0 max-w-xl mx-auto z-50 border border-white rounded-xl bg-card px-4 py-3 transition-all duration-300">
+    <nav className="sticky top-3 inset-x-0 w-full mx-auto z-50 rounded-2xl bg-card px-4 py-3 transition-all duration-300">
       <div className="flex items-center justify-between">
-        {/* Logo or Brand Name */}
-        <Link href="/" className="text-lg font-boldtext-accent">
-          Kevin Chau
+        <Link href="/" className="text-2xl font-bold text-accent">
+          kevchaudev.
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -46,7 +45,7 @@ const Nav = () => {
 
       {/* Mobile Navigation Links */}
       <div
-        className={`mt-3 md:hidden overflow-hidden transition-all duration-300 ${
+        className={`md:hidden overflow-hidden transition-all duration-300 ${
           isOpen ? 'max-h-96' : 'max-h-0'
         }`}
       >
