@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Page() {
     return (
-        <main className="flex flex-col justify-center gap-4 h-screen">
+        <main className="flex flex-col justify-center items-center gap-4 h-screen">
             <div>
                 <h1 className="text-center text-4xl font-bold mb-4 lg:text-left text-accent lg:w-1/2">Take a deep dive into my passions. Where I talk about school, career, and life.</h1>
                 <p className="text-center mb-8 lg:text-left lg:w-1/2">One of my outlets is in the form of creative writing. A way for me to get my thoughts out. Feel free to read through these articles.</p>

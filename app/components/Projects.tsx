@@ -32,7 +32,7 @@ export function Projects() {
         }
       },
       {
-        threshold: 0.7,
+        threshold: 0.2,
       }
     );
 
@@ -54,8 +54,8 @@ export function Projects() {
         animate={isVisible ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
         transition={{ ease: "easeOut", duration: 1 }}
       >
-        <h1 className="text-center text-4xl font-bold mb-4 lg:text-left text-accent">My Project Gallery</h1>
-        <p className="text-center mb-8 lg:text-left lg:w-1/2">
+        <h1 className="text-xl font-bold mb-4 lg:text-left lg:text-4xl text-accent">My Project Gallery</h1>
+        <p className="text-sm mb-8 lg:text-left lg:w-1/2 lg:text-base">
           Check out the projects I've been working on recently! I like to build efficient software
           that makes people's lives easier in some capacity. As you can tell, I am really into web
           development. Currently learning Next.js and TypeScript. Looking to learn more about

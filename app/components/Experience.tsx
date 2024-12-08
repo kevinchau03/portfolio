@@ -13,7 +13,7 @@ export function Experience() {
       id: 1,
       title: "Western University",
       role: "Work Study Student",
-      period: "September 2024 - Present",
+      period: "Sept 2024 - Present",
       duration: "4 Months",
       location: "London, Ontario",
       image: "/Western.png",
@@ -23,7 +23,7 @@ export function Experience() {
       id: 2,
       title: "HitMeUp.ai",
       role: "Software Engineering Intern",
-      period: "May 2024 - September 2024",
+      period: "May 2024 - Sept 2024",
       duration: "5 Months",
       location: "Orange County, California",
       image: "/HitMeUp.svg",
@@ -33,7 +33,7 @@ export function Experience() {
       id: 3,
       title: "Western AI",
       role: "Senior Director of Communications",
-      period: "October 2022 - September 2024",
+      period: "Oct 2022 - Sept 2024",
       duration: "2 years, 3 Months",
       location: "London, Ontario",
       image: "/WesternAI.svg",
@@ -43,7 +43,7 @@ export function Experience() {
       id: 4,
       title: "Scratch Coding for Kids",
       role: "Python Tutor",
-      period: "May 2022 - September 2022",
+      period: "May 2022 - Sept 2022",
       duration: "5 Months",
       location: "Remote",
       image: "/SC4K.avif",
@@ -64,7 +64,7 @@ export function Experience() {
           setIsVisible(false);
         }
       },
-      { threshold: 0.7 }
+      { threshold: 0.2 }
     );
 
     if (ref.current) {
@@ -95,7 +95,7 @@ export function Experience() {
 
   return (
     <div id="experience" className="flex flex-col gap-6 mb-24" ref={ref}>
-      <h1 className="text-4xl font-bold mb-4 text-accent">My Software Engineering Journey</h1>
+      <h1 className="text-xl font-bold mb-4 text-accent lg:text-4xl">My Software Engineering Journey</h1>
       <motion.div
         className="flex flex-col gap-4"
         variants={containerVariants}
@@ -112,7 +112,7 @@ export function Experience() {
               className="flex cursor-pointer"
               onClick={() => handleToggle(exp.id)}
             >
-              <Image src={exp.image} alt={exp.title} width={50} height={50} className="rounded-full" />
+              <Image src={exp.image} alt={exp.title} width={30} height={30} className="rounded-full" />
               <div className="group ml-4 flex-grow flex-col items-center">
                 <div className="flex flex-col">
                   <div className="flex items-center justify-between gap-x-2">
