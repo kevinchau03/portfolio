@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 
 export function Experience() {
@@ -118,15 +118,15 @@ export function Experience() {
               <div className="group ml-4 flex-grow flex-col items-center">
                 <div className="flex flex-col">
                   <div className="flex items-center justify-between gap-x-2">
-                    <h2 className="inline-flex items-center justify-center font-medium leading-none text-md">
+                    <h3 className="inline-flex items-center justify-center font-medium leading-none text-md">
                       {exp.title}
                       {expanded === exp.id ? (
-                        <ChevronDown size={16} className="ml-2" />
+                        <ChevronDown size={16} className="ml-1" />
                       ) : (
-                        <ChevronRight size={16} className="ml-2" />
+                        <ChevronRight size={16} className="ml-1" />
                       )}
 
-                    </h2>
+                    </h3>
                     <div className="text-right tabular-nums">
                       {exp.period}
                     </div>

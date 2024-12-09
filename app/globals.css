@@ -4,14 +4,11 @@
 
 html {
   scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  scrollbar-width: none;;
-  overflow: none;
 }
 
 body {
   color: white;
-  background-color: #090c10;
+  background: radial-gradient(circle, rgb(18, 18, 18) 20%, #090c10 100%);
 }
 
 li {
@@ -19,7 +16,7 @@ li {
 }
 
 .custom-class {
-  fill: #059669;
+  fill: #0077B7;
 }
 .custom-class:hover {
   fill: #000;
