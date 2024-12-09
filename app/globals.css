@@ -8,7 +8,7 @@ html {
 
 body {
   color: white;
-  background: radial-gradient(circle, rgb(18, 18, 18) 20%, #090c10 100%);
+  background-color: #090c10;
 }
 
 li {

@@ -27,7 +27,7 @@ const Nav = () => {
             Experience
           </Link>
           <Link href="/passion" className="hover:text-accent">
-            Passion
+            About Me
           </Link>
         </div>
 
@@ -69,7 +69,7 @@ const Nav = () => {
             className="block py-2 hover:text-accent"
             onClick={() => setIsOpen(false)}
           >
-            Passion
+            About Me
           </Link>
         </div>
       </div>

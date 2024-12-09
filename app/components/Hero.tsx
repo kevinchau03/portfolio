@@ -27,7 +27,7 @@ export function Hero() {
           <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white hover:-translate-y-2 
                           transition duration-300 ease-in-out">
             <a href="/KevinChau_Resume.pdf" download>
-              My Resume
+              My Resume 
             </a>
           </button>
         </div>
