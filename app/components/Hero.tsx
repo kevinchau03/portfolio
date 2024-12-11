@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -22,13 +23,19 @@ export function Hero() {
         <div className="mt-8 flex justify-center md:justify-start gap-4">
           <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white hover:-translate-y-2 
                           transition duration-300 ease-in-out">
-            <a href="mailto:kchau57@uwo.com">E-Mail Me</a>
+            <a href="mailto:kchau57@uwo.com">Contact Me</a>
           </button>
           <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white hover:-translate-y-2 
                           transition duration-300 ease-in-out">
             <a href="/KevinChau_Resume.pdf" download>
               My Resume 
             </a>
+          </button>
+          <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white hover:-translate-y-2 
+                          transition duration-300 ease-in-out">
+            <Link href="/passion">
+              Read More
+            </Link>
           </button>
         </div>
       </div>

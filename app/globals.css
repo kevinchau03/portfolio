@@ -8,7 +8,7 @@ html {
 
 body {
   color: white;
-  background-color: #090c10;
+  background-color: #24292e;
 }
 
 li {
@@ -16,8 +16,8 @@ li {
 }
 
 .custom-class {
-  fill: #0077B7;
+  fill: #24292e;
 }
 .custom-class:hover {
-  fill: #000;
+  fill: #B3EBF2;
 }

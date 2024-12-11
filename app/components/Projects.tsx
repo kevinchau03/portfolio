@@ -75,8 +75,8 @@ export function Projects() {
               <h2 className="text-lg font-bold">Milo Financial</h2>
             </div>
             <div className="flex flex-col justify-between flex-grow">
-              <p className="leading-relaxed text-muted">
-                Your own personal AI financial assistant. Start saving better with Milo.
+              <p className="leading-relaxed text-muted text-sm md:text-base">
+                Currently building your own personal AI financial assistant. Start saving better with Milo.
               </p>
               <a href="https://hack-western11.vercel.app/" target="_blank" className="mt-3 text-accent hover:text-white inline-flex items-center">
                 Learn More

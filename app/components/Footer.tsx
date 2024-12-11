@@ -20,13 +20,6 @@ export function Footer() {
                     fgColor="currentColor"
                     bgColor="#"
                 />
-                <SocialIcon
-                    url="https://www.instagram.com/kevin.chau03/"
-                    target="_blank"
-                    className="custom-class"
-                    fgColor="currentColor"
-                    bgColor="#"
-                />
             </div>
         </footer>
     );

@@ -14,8 +14,8 @@ const config: Config = {
       colors: {
         'back-black': '#0f1217',
         'nav-black': '#1e1e2a',
-        'accent': '#0077B7',
-        'card': '#131921',
+        'accent': '#B3EBF2',
+        'card': '#2b3137',
         'muted': '#64748b'
       },
       backgroundImage: {

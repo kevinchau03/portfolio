@@ -23,8 +23,7 @@ export default function Page() {
                     <div className="ml-4">
                         <p className="font-semibold mb-2">My current tech stack consists of:</p>
                         <ul className="list-disc list-inside">
-                            <li><span className="font-bold">Front End:</span> Next.js</li>
-                            <li><span className="font-bold">Back End:</span> Next.js API Routes</li>
+                            <li><span className="font-bold">Framework:</span> Next.js</li>
                             <li><span className="font-bold">Language:</span> TypeScript</li>
                             <li><span className="font-bold">Database:</span> MongoDB</li>
                         </ul>
