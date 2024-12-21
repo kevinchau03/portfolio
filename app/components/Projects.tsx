@@ -49,7 +49,7 @@ export function Projects() {
 
   return (
     <div id="projects" className="mb-32">
-        <h1 className="text-xl font-bold mb-4 lg:text-left lg:text-4xl text-accent">My Project Gallery</h1>
+        <h1 className="text-xl font-bold mb-4 lg:text-left lg:text-4xl text-accent">&lt;projects/&gt;</h1>
         <p className="text-sm mb-8 lg:text-left lg:w-1/2 lg:text-base">
           Check out the projects I've been working on recently! I like to build efficient software
           that makes people's lives easier in some capacity. As you can tell, I am really into web

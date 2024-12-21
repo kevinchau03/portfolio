@@ -5,13 +5,12 @@ export default function Page() {
     return (
         <main className="flex flex-col justify-center gap-4 mt-20">
             <div className="text-left mb-4">
-                <div className="flex items-center">
-                    <h1 className="text-3xl font-bold mb-4">Hey there!</h1>
-                    <Image src="/IMG_4551.png" alt="me" width={100} height={100} className="rounded-full" />
+                <div className="flex items-center justify-between">
+                    <h1 className="text-3xl font-bold">Hey there!</h1>
+                    <Image src="/IMG_4551.png" alt="me" width={150} height={150} />
                 </div>
                 <p className="mb-4 text-sm md:text-base">
-                    My name is Kevin Chau, an aspiring Software Engineer.
-                    My passion for coding started when I discovered a beautiful site called "YouTube to MP3"—a godsend for my younger self.
+                    My name is Kevin Chau, a Software Engineer. My passion for coding started when I discovered a beautiful site called "YouTube to MP3"—a godsend for my younger self.
                 </p>
                 <p className="mb-4 text-sm md:text-base">
                     Fast forward to high school: I took my first computer science course in grade 12 and was immediately hooked.

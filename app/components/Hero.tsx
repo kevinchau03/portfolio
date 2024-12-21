@@ -7,7 +7,7 @@ export function Hero() {
       {/* Info Section */}
       <div className="text-center md:text-left w-full md:w-3/4">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
-          Hello! I'm <span className="text-accent">Kevin Chau</span>.
+          Hello, I'm <span className="text-accent">Kevin Chau!</span>
         </h1>
         <p className="hidden mt-6 leading-relaxed md:block">
           Welcome to my little digital corner! This is where you can learn a little bit about me.
@@ -24,12 +24,6 @@ export function Hero() {
           <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white hover:-translate-y-2 
                           transition duration-300 ease-in-out">
             <a href="mailto:kchau57@uwo.com">Contact Me</a>
-          </button>
-          <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white hover:-translate-y-2 
-                          transition duration-300 ease-in-out">
-            <a href="/KevinChau_Resume.pdf" download>
-              My Resume 
-            </a>
           </button>
           <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white hover:-translate-y-2 
                           transition duration-300 ease-in-out">

@@ -15,11 +15,11 @@ const Nav = () => {
     <nav className="sticky top-3 inset-x-0 w-full mx-auto z-50 rounded-2xl border border-slate bg-card px-4 py-3 transition-all duration-300">
       <div className="flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold text-accent">
-          kevchaudev.
+          &lt;kevchaudev/&gt;
         </Link>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden items-center md:flex space-x-6">
           <Link href="/#projects" className="hover:text-accent">
             Projects
           </Link>
@@ -29,6 +29,11 @@ const Nav = () => {
           <Link href="/passion" className="hover:text-accent">
             About Me
           </Link>
+          <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white">
+            <a href="/KevinChau_Resume.pdf" download>
+              My Resume 
+            </a>
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -71,6 +76,12 @@ const Nav = () => {
           >
             About Me
           </Link>
+          <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white hover:-translate-y-2 
+                          transition duration-300 ease-in-out">
+            <a href="/KevinChau_Resume.pdf" download>
+              My Resume 
+            </a>
+          </button>
         </div>
       </div>
     </nav>
