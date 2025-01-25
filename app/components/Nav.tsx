@@ -12,7 +12,7 @@ const Nav = () => {
   }
 
   return (
-    <nav className="sticky top-3 inset-x-0 w-full mx-auto z-50 rounded-2xl border border-slate bg-card px-4 py-3 transition-all duration-300">
+    <nav className="sticky top-3 inset-x-0 w-full mx-auto z-50 rounded-2xl border border-accent bg-[#000000] px-4 py-3 transition-all duration-300">
       <div className="flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold text-accent">
           &lt;kevchaudev/&gt;
@@ -26,12 +26,12 @@ const Nav = () => {
           <Link href="/#experience" className="hover:text-accent">
             Experience
           </Link>
-          <Link href="/passion" className="hover:text-accent">
+          <Link href="/about" className="hover:text-accent">
             About Me
           </Link>
-          <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white">
-            <a href="/KevinChau_Resume.pdf" download>
-              My Resume 
+          <button className="bg-accent p-2 items-center justify-center rounded-md hover:bg-white hover:text-accent transition duration-300 ease-in-out">
+            <a download={true} href="/KevinChauResume.pdf">
+              Resume
             </a>
           </button>
         </div>
@@ -50,9 +50,8 @@ const Nav = () => {
 
       {/* Mobile Navigation Links */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          isOpen ? 'max-h-96' : 'max-h-0'
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'
+          }`}
       >
         <div className="flex flex-col space-y-2">
           <Link
@@ -70,16 +69,15 @@ const Nav = () => {
             Experience
           </Link>
           <Link
-            href="/passion"
+            href="/about"
             className="block py-2 hover:text-accent"
             onClick={() => setIsOpen(false)}
           >
             About Me
           </Link>
-          <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white hover:-translate-y-2 
-                          transition duration-300 ease-in-out">
-            <a href="/KevinChau_Resume.pdf" download>
-              My Resume 
+          <button className="bg-accent p-2 items-center justify-center rounded-md hover:bg-white hover:text-accent transition duration-300 ease-in-out">
+            <a download={true} href="/KevinChauResume.pdf">
+              Resume
             </a>
           </button>
         </div>

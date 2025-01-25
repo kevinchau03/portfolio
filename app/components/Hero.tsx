@@ -21,16 +21,12 @@ export function Hero() {
           <span className="text-accent">Django</span>. Looking for internship opportunities in 2025.
         </p>
         <div className="mt-8 flex justify-center md:justify-start gap-4">
-          <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white hover:-translate-y-2 
-                          transition duration-300 ease-in-out">
-            <a href="mailto:kchau57@uwo.com">Contact Me</a>
-          </button>
-          <button className="text-accent border-accent border p-2 items-center justify-center rounded-md hover:bg-white hover:-translate-y-2 
-                          transition duration-300 ease-in-out">
-            <Link href="/passion">
+          <a href="mailto:kchau57@uwo.com"className="bg-accent p-2 items-center justify-center rounded-md hover:bg-white hover:text-accent transition duration-300 ease-in-out">
+           Contact Me
+          </a>
+          <Link href="/about" className="bg-accent p-2 items-center justify-center rounded-md hover:bg-white hover:text-accent transition duration-300 ease-in-out">
               Read More
-            </Link>
-          </button>
+          </Link>
         </div>
       </div>
       {/* Right Image Section */}

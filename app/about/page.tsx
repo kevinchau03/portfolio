@@ -3,11 +3,11 @@ import Image from 'next/image';
 
 export default function Page() {
     return (
-        <main className="flex flex-col justify-center gap-4 mt-20">
+        <main className="flex flex-col justify-center gap-4 mt-10">
             <div className="text-left mb-4">
                 <div className="flex items-center justify-between">
                     <h1 className="text-3xl font-bold">Hey there!</h1>
-                    <Image src="/IMG_4551.png" alt="me" width={150} height={150} />
+                    <Image src="/IMG_4551.png" alt="me" width={125} height={125} />
                 </div>
                 <p className="mb-4 text-sm md:text-base">
                     My name is Kevin Chau, a Software Engineer. My passion for coding started when I discovered a beautiful site called "YouTube to MP3"—a godsend for my younger self.
@@ -48,10 +48,9 @@ export default function Page() {
                     My biggest motivators are my friends and family. They are very important pieces in my life and have shaped me into who I am today.
                     Here are some photos as my appreciation. (Psst. Don't let them know how cheesy I am!)
                 </p>
-                <div className="grid gap-4 items-center justify-center lg:grid-cols-3 mb-4 text-sm md:text-base bg-card p-4 rounded-xl">
-                    <Image src="/lantern.webp" alt="lantern" width={375} height={375} className="rounded-xl" />
-                    <Image src="/beach.webp" alt="beach" width={375} height={375} className="rounded-xl" />
-                    <Image src="/family.webp" alt="family" width={375} height={375} className="rounded-xl" />
+                <div className="flex flex-col items-center justify-center mb-4 text-sm md:text-base w-full gap-4">
+                    <Image src="/lantern.webp" alt="lantern" width={1000} height={1000} className="rounded-xl" />
+                    <Image src="/family.webp" alt="family" width={1000} height={1000} className="rounded-xl" />
                 </div>
                 <p className="mb-4 text-sm md:text-base">
                     If you made it this far in the website, I just to say thank you for getting this far. I hope you got to learn a little bit
