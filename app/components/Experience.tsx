@@ -12,6 +12,16 @@ export function Experience() {
   const experiences = [
     {
       id: 1,
+      title: "Constant Closer",
+      role: "Software Engineer",
+      period: "March 2025 - Present",
+      duration: "Currently Working",
+      location: "Remote",
+      image: "/constantcloser.svg",
+      details: "Currently developing an AI Sales Agent for users who want to close more leads from their email lists.",
+    },
+    {
+      id: 2,
       title: "Western University",
       role: "Work Study Student",
       period: "Sept 2024 - Present",
@@ -21,7 +31,7 @@ export function Experience() {
       details: "Working as a research assistant in the department of computer science. Assisting in researching MQTT protocols and how it could be used with our ESP module to track data in harsh environments.",
     },
     {
-      id: 2,
+      id: 3,
       title: "HitMeUp.ai",
       role: "Software Engineering Intern",
       period: "May 2024 - Sept 2024",
@@ -31,7 +41,7 @@ export function Experience() {
       details: "Contributed to the development of the mobile and web app for HitMeUp. An AI gatekeeper used for creators and professionals to capture leads automatically.",
     },
     {
-      id: 3,
+      id: 4,
       title: "Western AI",
       role: "Senior Director of Communications",
       period: "Oct 2022 - Sept 2024",
@@ -41,7 +51,7 @@ export function Experience() {
       details: "Led communication strategies and organized outreach programs to promote the club. Coordinated events and developed engaging content for the community.",
     },
     {
-      id: 4,
+      id: 5,
       title: "Scratch Coding for Kids",
       role: "Python Tutor",
       period: "May 2022 - Sept 2022",
@@ -96,7 +106,7 @@ export function Experience() {
 
   return (
     <div id="experience" className="flex flex-col gap-6 mb-24">
-      <h1 className="text-xl font-bold mb-4 text-accent lg:text-4xl">&lt;experience/&gt;</h1>
+      <h1 className="text-3xl font-bold mb-4 text-accent lg:text-4xl">&lt;experience/&gt;</h1>
       <motion.div
         className="flex flex-col gap-4"
         variants={containerVariants}
@@ -107,7 +117,7 @@ export function Experience() {
         {experiences.map((exp) => (
           <motion.div
             key={exp.id}
-            className="flex flex-col rounded-lg bg-card p-3"
+            className="flex flex-col rounded-lg bg-card p-3 border-2 border-back-black"
             variants={cardVariants}
           >
             <div

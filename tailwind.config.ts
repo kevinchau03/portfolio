@@ -9,13 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Quicksand", "sans-serif"],
+        sans: ["Plus Jakarta Sans", "sans-serif"],
       },
       colors: {
         'back-black': '#0f1217',
         'nav-black': '#1e1e2a',
-        'accent': '#1697FF',
-        'card': '#111111',
+        'accent': '#5B88B2',
+        'card': '#FFFFFF',
         'muted': '#64748b'
       },
       backgroundImage: {

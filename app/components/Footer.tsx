@@ -10,14 +10,14 @@ export function Footer() {
                     url="https://www.linkedin.com/in/kevin-chau03/"
                     target="_blank"
                     className="custom-class"
-                    fgColor="currentColor"
+                    fgColor="#FFFFFF"
                     bgColor="#"
                 />
                 <SocialIcon
                     url="https://github.com/kevinchau03"
                     target="_blank"
                     className="custom-class"
-                    fgColor="currentColor"
+                    fgColor="#FFFFFF"
                     bgColor="#"
                 />
             </div>
