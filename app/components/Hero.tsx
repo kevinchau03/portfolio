@@ -36,7 +36,7 @@ export function Hero() {
           alt="Kevin Chau"
           width={375}
           height={375}
-          className="rounded-xl shadow-lg"
+          className="rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)] border-back-black"
         />
       </div>
     </div>
