@@ -4,6 +4,7 @@ import Image from 'next/image';
 export default function Page() {
     return (
         <main className="flex flex-col justify-center gap-4 mt-10">
+            
             <div className="text-left mb-4">
                 <div className="flex items-center justify-between">
                     <h1 className="text-3xl font-bold">Hey there!</h1>
