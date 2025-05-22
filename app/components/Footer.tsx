@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export function Footer() {
     return (
-        <footer className="flex flex-col items-center text-center h-[100px] lg:justify-between w-full p-4 border-t border-gray-200 lg:flex-row mt-auto">
+        <footer className="container mx-auto flex flex-col items-center text-center lg:justify-between w-full p-4 border-t border-gray-200 lg:flex-row mt-auto">
             <p className="text-sm text-muted">&copy;2025 Kevin Chau. Have a great day!</p>
             <div className="flex justify-center md:justify-start gap-4">
                 <a href="https://www.github.com/kevinchau03" target="_blank" rel="noopener noreferrer">

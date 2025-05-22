@@ -1,46 +1,50 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from 'next/image'
 
 export function Hero() {
   return (
-    <div id="hero" className="flex flex-col-reverse md:flex-row items-center justify-center h-[95vh]">
-      {/* Info Section */}
-      <div className="text-center md:text-left w-full md:w-3/4">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
-          Hello, I'm <span className="text-accent">Kevin Chau!</span> 👋
-        </h1>
-        <p className="hidden mt-6 leading-relaxed md:block">
-          Welcome to my little digital corner! This is where you can learn a little bit about me.
-          I am currently a fourth year computer science student at Western University!
-          My passions include full-stack web development, machine learning, and AI. I'm
-          proficient in <span className="text-accent">JavaScript</span>,{' '}
-          <span className="text-accent">TypeScript</span>, and{' '}
-          <span className="text-accent">Python</span>. My favorite frameworks
-          include <span className="text-accent">React</span>,{' '}
-          <span className="text-accent">Next.js</span>, and{' '}
-          <span className="text-accent">Django</span>. Looking for internship opportunities in 2025.
-        </p>
-        <div className="mt-8 flex justify-center md:justify-start gap-4">
-          <a href="mailto:kchau57@uwo.com" className="text-white bg-accent p-2 items-center justify-center rounded-md hover:bg-white transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
-                          transition duration-300 ease-in-out border-2 border-back-black hover:text-accent transition duration-300 ease-in-out">
-           Contact Me
-          </a>
-          <Link href="/about" className="text-white bg-accent p-2 items-center justify-center rounded-md hover:bg-white transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
-                          transition duration-300 ease-in-out border-2 border-back-black hover:text-accent transition duration-300 ease-in-out">
-              Read More
-          </Link>
+    <section id="hero" className="py-20">
+      <div className="container mx-auto flex flex-col md:flex-row items-center gap-8">
+
+        {/* portrait */}
+        <div className="flex-shrink-0">
+          <Image
+            src="/portrait.JPG"
+            alt="Kevin Chau"
+            width={96}
+            height={96}
+            className="rounded-md"
+          />
+        </div>
+
+        {/* text bio */}
+        <div className="w-full md:w-1/3 text-center md:text-left space-y-2">
+          <h1 className="text-xl md:text-2xl font-bold">Kevin Chau</h1>
+          <p className="hidden md:block leading-relaxed">
+            Software Engineer at{' '}
+            <a
+              href="https://www.constantcloser.com/"
+              className="text-primary font-bold"
+            >
+              Constant Closer
+            </a>
+          </p>
+          <p className="hidden md:block text-muted">Newmarket, Ontario, Canada</p>
+        </div>
+
+        {/* code snippet */}
+        <div className="w-full md:w-1/2">
+          <pre className="bg-gray-100 dark:bg-gray-900 dark:text-gray-100 p-6 rounded-lg overflow-x-auto font-mono text-sm">
+            {`class Programmer:
+    pronouns = 'He/Him'
+    interests = ['Sports', 'Comics', 'Anime', 'Fitness']
+    desc = 'A software engineer, specializing in building digital solutions.'
+    def goalsFor2025(self):
+        LandTechInternship()
+        TravelMore()`
+            }
+          </pre>
         </div>
       </div>
-      {/* Right Image Section */}
-      <div className="w-full md:w-1/2 mb-6 flex justify-center lg:mb-0">
-        <Image
-          src="/portrait.JPG"
-          alt="Kevin Chau"
-          width={375}
-          height={375}
-          className="rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)] border-back-black"
-        />
-      </div>
-    </div>
-  );
+    </section>
+  )
 }

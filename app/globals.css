@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
+  @apply bg-white transition-colors duration-300;
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: #A259FF08;
+html.dark {
+  @apply bg-background;
 }
 
 li {

@@ -3,8 +3,7 @@ import Image from 'next/image';
 
 export default function Page() {
     return (
-        <main className="flex flex-col justify-center gap-4 mt-10">
-            
+        <main className="container mx-auto flex flex-col justify-center gap-4 mt-10">
             <div className="text-left mb-4">
                 <div className="flex items-center justify-between">
                     <h1 className="text-3xl font-bold">Hey there!</h1>
@@ -18,8 +17,8 @@ export default function Page() {
                     Here I am now, a fourth-year computer science student at Western University. I'm most passionate about full-stack development,
                     particularly building web and mobile apps from the ground up.
                 </p>
-                <div className="flex mb-4 text-sm md:text-base bg-card rounded-xl p-4">
-                    <div className="bg-accent w-[5px] rounded-full"></div>
+                <div className="flex mb-4 text-sm md:text-base dark:bg-card rounded-xl p-4">
+                    <div className="bg-primary w-[5px] rounded-full"></div>
                     <div className="ml-4">
                         <p className="font-semibold mb-2">My current tech stack consists of:</p>
                         <ul className="list-disc list-inside">
@@ -34,8 +33,8 @@ export default function Page() {
                     I like to live by a japanese word called "Kaizen,". By abiding by this rule, I am always looking for
                     ways to improve myself and my work.
                 </p>
-                <div className="flex mb-4 text-sm md:text-base bg-card rounded-xl p-4">
-                    <div className="bg-accent w-[5px] rounded-full"></div>
+                <div className="flex mb-4 text-sm md:text-base dark:bg-card rounded-xl p-4">
+                    <div className="bg-primary w-[5px] rounded-full"></div>
                     <div className="ml-4">
                         <p className="font-bold text-lg">Kaizen</p>
                         <p className="italic text-sm text-gray-500">[ki-zan]</p>
@@ -49,10 +48,7 @@ export default function Page() {
                     My biggest motivators are my friends and family. They are very important pieces in my life and have shaped me into who I am today.
                     Here are some photos as my appreciation. (Psst. Don't let them know how cheesy I am!)
                 </p>
-                <div className="flex flex-col items-center justify-center mb-4 text-sm md:text-base w-full gap-4">
-                    <Image src="/lantern.webp" alt="lantern" width={1000} height={1000} className="rounded-xl" />
-                    <Image src="/family.webp" alt="family" width={1000} height={1000} className="rounded-xl" />
-                </div>
+                <Image src="/lantern.webp" alt="lantern" width={1000} height={1000} className="rounded-xl" />
                 <p className="mb-4 text-sm md:text-base">
                     If you made it this far in the website, I just to say thank you for getting this far. I hope you got to learn a little bit
                     more about me. Feel free to shoot me a message and connect with me for a quick chat.

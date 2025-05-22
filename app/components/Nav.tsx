@@ -1,17 +1,25 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X } from 'lucide-react' // Importing Lucide icons
+import { Menu, X, Sun, Moon } from 'lucide-react'
+import { useTheme } from 'next-themes'
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme, systemTheme } = useTheme()
   const pathname = usePathname();
+
+  // avoid hydration mismatch
+  useEffect(() => { setMounted(true) }, [])
+  const currentTheme = theme === 'system' ? systemTheme : theme
 
   // Function to toggle the menu
   const toggleMenu = () => {
     setIsOpen(!isOpen)
   }
+  const toggleTheme = () => setTheme(currentTheme === 'dark' ? 'light' : 'dark')
 
   // A helper function to get a nice directory name from the current pathname.
   const getDirectoryName = (): string => {
@@ -21,13 +29,13 @@ const Nav = () => {
     }
     // Remove any leading/trailing slashes and add the "~/" prefix.
     const formattedPath = pathname.replace(/^\/|\/$/g, '');
-    return `~/${formattedPath}`;
+    return `~/home/${formattedPath}`;
   };
 
   return (
-    <nav className="sticky top-3 inset-x-0 w-full mx-auto z-50 rounded-2xl border-2 border-back-black bg-white px-4 py-3 transition-all duration-300">
+    <nav className="container mx-auto sticky top-3 inset-x-0 mx-auto z-50 rounded-2xl border border-background bg-white dark:border-white px-4 py-3 dark:bg-background">
       <div className="flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold text-accent flex items-center">
+        <Link href="/" className="text-2xl font-bold text-primary flex items-center">
           {getDirectoryName()}
           {/* Blinking cursor */}
           <span className="ml-2 animate-blink">|</span>
@@ -35,28 +43,36 @@ const Nav = () => {
 
         {/* Desktop Navigation Links */}
         <div className="hidden items-center md:flex space-x-6">
-          <Link href="/#projects" className="hover:text-accent hover:font-bold hover:translate-y-[-3px] transition-transform duration-300">
-            Projects
+          <Link href="/about" className="hover:text-primary hover:font-bold hover:translate-y-[-3px] transition-transform duration-300">
+            About
           </Link>
-          <Link href="/#experience" className="hover:text-accent hover:font-bold hover:translate-y-[-3px] transition-transform duration-300">
-            Experience
-          </Link>
-          <Link href="/about" className="hover:text-accent hover:font-bold hover:translate-y-[-3px] transition-transform duration-300">
-            About Me
-          </Link>
-            <a download={true} href="/KevinChau_Resume.pdf" className='bg-accent text-white p-2 items-center justify-center rounded-md hover:bg-white transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
-                  transition duration-300 ease-in-out border-2 border-back-black hover:text-accent transition duration-300 ease-in-out'>
-              Resume
-            </a>
+          <a download={true} href="/KevinChau_Resume.pdf" className='bg-primary text-white p-2 items-center justify-center rounded-md hover:bg-white transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
+                  transition duration-300 ease-in-out border-2 border-back-black hover:text-primary transition duration-300 ease-in-out'>
+            Resume
+          </a>
+          {/* Theme toggle */}
+          {mounted && (
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle Dark Mode"
+              className="mr-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            >
+              {currentTheme === 'dark' ? (
+                <Sun className="w-5 h-5 text-white-300" />
+              ) : (
+                <Moon className="w-5 h-5 text-white-800" />
+              )}
+            </button>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button onClick={toggleMenu} aria-label="Toggle Menu">
             {isOpen ? (
-              <X className="w-6 h-6 text-accent" />
+              <X className="w-6 h-6 text-primary" />
             ) : (
-              <Menu className="w-6 h-6 text-accent" />
+              <Menu className="w-6 h-6 text-primary" />
             )}
           </button>
         </div>
@@ -70,27 +86,27 @@ const Nav = () => {
         <div className="flex flex-col space-y-2">
           <Link
             href="/#projects"
-            className="block py-2 hover:text-accent hover:font-bold hover:translate-y-[-3px] transition-transform duration-300"
+            className="block py-2 hover:text-primary hover:font-bold hover:translate-y-[-3px] transition-transform duration-300"
             onClick={() => setIsOpen(false)}
           >
             Projects
           </Link>
           <Link
             href="/#experience"
-            className="block py-2 hover:text-accent hover:font-bold hover:translate-y-[-3px] transition-transform duration-300"
+            className="block py-2 hover:text-primary hover:font-bold hover:translate-y-[-3px] transition-transform duration-300"
             onClick={() => setIsOpen(false)}
           >
             Experience
           </Link>
           <Link
             href="/about"
-            className="block py-2 hover:text-accent hover:font-bold hover:translate-y-[-3px] transition-transform duration-300"
+            className="block py-2 hover:text-primary hover:font-bold hover:translate-y-[-3px] transition-transform duration-300"
             onClick={() => setIsOpen(false)}
           >
             About Me
           </Link>
-          <a download={true} href="/KevinChau_Resume.pdf" className="bg-accent text-white p-2 items-center justify-center rounded-md hover:bg-white transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
-                  transition duration-300 ease-in-out border-2 border-back-black hover:text-accent transition duration-300 ease-in-out">
+          <a download={true} href="/KevinChau_Resume.pdf" className="bg-primary text-white p-2 items-center justify-center rounded-md hover:bg-white transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
+                  transition duration-300 ease-in-out border-2 border-back-black hover:text-primary transition duration-300 ease-in-out">
             Resume
           </a>
         </div>
