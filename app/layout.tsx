@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${gabarito.className} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true}>
           <Nav />
           {children}
           <Analytics />

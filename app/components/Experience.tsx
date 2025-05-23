@@ -106,7 +106,7 @@ export function Experience() {
 
   return (
     <div id="experience" className="container mx-auto px-4 flex flex-col gap-6 mb-24">
-      <h1 className="text-3xl font-bold mb-4 text-primary lg:text-4xl">&lt;experience/&gt;</h1>
+      <h1 className="text-3xl font-bold text-primary lg:text-4xl">&lt;experience/&gt;</h1>
       <motion.div
         className="flex flex-col gap-4"
         variants={containerVariants}
@@ -117,7 +117,12 @@ export function Experience() {
         {experiences.map((exp) => (
           <motion.div
             key={exp.id}
-            className="flex flex-col rounded-lg dark:bg-card p-3"
+            className={`
+            flex flex-col rounded-lg border border-black dark:bg-card p-3
+            ${expanded === exp.id
+              ? 'shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)] dark:shadow-white/20'
+              : 'shadow-none'}
+          `}
             variants={cardVariants}
           >
             <div

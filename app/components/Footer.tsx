@@ -1,5 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
+import GithubIcon from '@/public/icons8-github.svg';
+import LinkedinIcon from '@/public/icons8-linkedin.svg';
 
 export function Footer() {
     return (
@@ -7,10 +8,10 @@ export function Footer() {
             <p className="text-sm text-muted">&copy;2025 Kevin Chau. Have a great day!</p>
             <div className="flex justify-center md:justify-start gap-4">
                 <a href="https://www.github.com/kevinchau03" target="_blank" rel="noopener noreferrer">
-                    <Image src="/icons8-github.svg" alt="GitHub" width={30} height={30} />
+                    <GithubIcon className="w-8 h-8 fill-current" />
                 </a>
                 <a href="https://www.linkedin.com/in/kevin-chau03" target="_blank">
-                    <Image src="/icons8-linkedin.svg" alt="LinkedIn" width={30} height={30} />
+                    <LinkedinIcon className="w-8 h-8 fill-current" />
                 </a>
             </div>
         </footer>

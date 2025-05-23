@@ -15,13 +15,6 @@ li {
   list-style-type: circle;
 }
 
-.custom-class {
-  fill: #5B88B2;
-}
-.custom-class:hover {
-  fill: #FFFFFF;
-}
-
 /* Blinking cursor animation */
 @keyframes blink {
   50% {

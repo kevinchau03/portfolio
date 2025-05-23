@@ -51,7 +51,7 @@ export function Projects() {
     <div id="projects" className="container mx-auto px-4 mb-32">
       <h1 className="text-3xl font-bold mb-4 lg:text-left lg:text-4xl text-primary">&lt;projects/&gt;</h1>
       <motion.div
-        className="grid grid-cols-1 justify-center items-center lg:grid-cols-3 gap-6"
+        className="grid grid-cols-1 justify-items-center items-center md:grid-cols-3 gap-6"
         variants={containerVariants}
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
@@ -59,8 +59,8 @@ export function Projects() {
       >
         {/* Project 1 */}
         <motion.div variants={projectVariants} className="max-w-md">
-          <div className="flex rounded-lg h-full p-8 flex-col dark:bg-card
-                          transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
+          <div className="flex rounded-lg h-full p-8 flex-col border border-black dark:bg-card
+                          transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)] dark:hover:dark:shadow-white/20
                           transition duration-300 ease-in-out">
             <div className="flex items-center mb-3">
               <div className="w-12 h-12 mr-3 inline-flex items-center justify-center text-white flex-shrink-0">
@@ -84,8 +84,8 @@ export function Projects() {
         </motion.div>
         {/* Repeat for Project 2 */}
         <motion.div variants={projectVariants} className="max-w-md">
-          <div className="flex rounded-lg h-full p-8 flex-col dark:bg-card
-                          transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
+          <div className="flex rounded-lg h-full p-8 flex-col border border-black dark:bg-card
+                          transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)] dark:hover:dark:shadow-white/20
                           transition duration-300 ease-in-out">
             <div className="flex items-center mb-3">
               <div className="w-12 h-12 mr-3 inline-flex items-center justify-center rounded-full bg-primary text-white flex-shrink-0">
@@ -112,8 +112,8 @@ export function Projects() {
         </motion.div>
         {/* Repeat for Project 3 */}
         <motion.div variants={projectVariants} className="max-w-md">
-          <div className="flex rounded-lg h-full p-8 flex-col dark:bg-card
-                          transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
+          <div className="flex rounded-lg h-full p-8 flex-col border border-black dark:bg-card
+                          transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)] dark:hover:dark:shadow-white/20
                           transition duration-300 ease-in-out">
             <div className="flex items-center mb-3">
               <div className="w-12 h-12 mr-3 inline-flex items-center justify-center rounded-full bg-primary text-white flex-shrink-0">

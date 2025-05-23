@@ -13,6 +13,16 @@ const Nav = () => {
 
   // avoid hydration mismatch
   useEffect(() => { setMounted(true) }, [])
+
+  if (!mounted) {
+    return (
+      <nav className="container mx-auto py-3">
+        {/* you can leave a minimal placeholder here,
+            or even null if you prefer no Nav until mount */}
+      </nav>
+    )
+  }
+
   const currentTheme = theme === 'system' ? systemTheme : theme
 
   // Function to toggle the menu
@@ -33,7 +43,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="container mx-auto sticky top-3 inset-x-0 mx-auto z-50 rounded-2xl border border-background bg-white dark:border-white px-4 py-3 dark:bg-background">
+    <nav className="container sticky top-5 z-50 rounded-xl border border-background bg-white dark:border-white py-2 dark:bg-background">
       <div className="flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold text-primary flex items-center">
           {getDirectoryName()}
@@ -43,7 +53,7 @@ const Nav = () => {
 
         {/* Desktop Navigation Links */}
         <div className="hidden items-center md:flex space-x-6">
-          <Link href="/about" className="hover:text-primary hover:font-bold hover:translate-y-[-3px] transition-transform duration-300">
+          <Link href="/about" className="hover:text-primary hover:font-bold">
             About
           </Link>
           <a download={true} href="/KevinChau_Resume.pdf" className='bg-primary text-white p-2 items-center justify-center rounded-md hover:bg-white transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
@@ -68,6 +78,19 @@ const Nav = () => {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
+          {mounted && (
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle Dark Mode"
+              className="mr-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            >
+              {currentTheme === 'dark' ? (
+                <Sun className="w-5 h-5 text-white-300" />
+              ) : (
+                <Moon className="w-5 h-5 text-white-800" />
+              )}
+            </button>
+          )}
           <button onClick={toggleMenu} aria-label="Toggle Menu">
             {isOpen ? (
               <X className="w-6 h-6 text-primary" />
@@ -85,25 +108,11 @@ const Nav = () => {
       >
         <div className="flex flex-col space-y-2">
           <Link
-            href="/#projects"
-            className="block py-2 hover:text-primary hover:font-bold hover:translate-y-[-3px] transition-transform duration-300"
-            onClick={() => setIsOpen(false)}
-          >
-            Projects
-          </Link>
-          <Link
-            href="/#experience"
-            className="block py-2 hover:text-primary hover:font-bold hover:translate-y-[-3px] transition-transform duration-300"
-            onClick={() => setIsOpen(false)}
-          >
-            Experience
-          </Link>
-          <Link
             href="/about"
-            className="block py-2 hover:text-primary hover:font-bold hover:translate-y-[-3px] transition-transform duration-300"
+            className="block py-2 hover:text-primary hover:font-bold"
             onClick={() => setIsOpen(false)}
           >
-            About Me
+            About
           </Link>
           <a download={true} href="/KevinChau_Resume.pdf" className="bg-primary text-white p-2 items-center justify-center rounded-md hover:bg-white transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
                   transition duration-300 ease-in-out border-2 border-back-black hover:text-primary transition duration-300 ease-in-out">
