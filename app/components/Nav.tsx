@@ -56,8 +56,8 @@ const Nav = () => {
           <Link href="/about" className="hover:text-primary hover:font-bold">
             About
           </Link>
-          <a download={true} href="/KevinChau_Resume.pdf" className='bg-primary text-white p-2 items-center justify-center rounded-md hover:bg-white transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
-                  transition duration-300 ease-in-out border-2 border-back-black hover:text-primary transition duration-300 ease-in-out'>
+          <a download={true} href="/Resume_KevinChau.pdf" className='bg-primary text-white p-2 items-center justify-center rounded-md hover:bg-white transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
+                  transition duration-300 ease-in-out hover:text-primary transition duration-300 ease-in-out'>
             Resume
           </a>
           {/* Theme toggle */}
