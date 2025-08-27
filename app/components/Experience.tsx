@@ -22,26 +22,16 @@ export function Experience() {
     },
     {
       id: 2,
-      title: "Western University",
-      role: "Work Study Student",
-      period: "Sept 2024 - Present",
-      duration: "4 Months",
-      location: "London, Ontario",
-      image: "https://www.uwo.ca/img/homepage/2017/logo/mustangs_logo.svg",
-      details: "Working as a research assistant in the department of computer science. Assisting in researching MQTT protocols and how it could be used with our ESP module to track data in harsh environments.",
-    },
-    {
-      id: 3,
       title: "HitMeUp.ai",
       role: "Software Engineering Intern",
       period: "May 2024 - Sept 2024",
       duration: "5 Months",
-      location: "Orange County, California",
+      location: "Remote",
       image: "/HitMeUp.svg",
       details: "Contributed to the development of the mobile and web app for HitMeUp. An AI gatekeeper used for creators and professionals to capture leads automatically.",
     },
     {
-      id: 4,
+      id: 3,
       title: "Western AI",
       role: "Senior Director of Communications",
       period: "Oct 2022 - Sept 2024",
@@ -51,7 +41,7 @@ export function Experience() {
       details: "Led communication strategies and organized outreach programs to promote the club. Coordinated events and developed engaging content for the community.",
     },
     {
-      id: 5,
+      id: 4,
       title: "Scratch Coding for Kids",
       role: "Python Tutor",
       period: "May 2022 - Sept 2022",
@@ -105,8 +95,8 @@ export function Experience() {
   };
 
   return (
-    <div id="experience" className="container mx-auto px-4 flex flex-col gap-6 mb-24">
-      <h1 className="text-3xl font-bold text-primary lg:text-4xl">&lt;experience/&gt;</h1>
+    <section id="experience" className="container mx-auto px-4 flex flex-col gap-6 mb-24 py-10">
+      <h1 className="text-3xl font-bold text-primary lg:text-4xl font-mono">$ cd experience</h1>
       <motion.div
         className="flex flex-col gap-4"
         variants={containerVariants}
@@ -165,6 +155,6 @@ export function Experience() {
           </motion.div>
         ))}
       </motion.div>
-    </div>
+    </section>
   );
 }

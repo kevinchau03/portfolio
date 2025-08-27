@@ -48,8 +48,8 @@ export function Projects() {
   }, []);
 
   return (
-    <div id="projects" className="container mx-auto px-4 mb-32">
-      <h1 className="text-3xl font-bold mb-4 lg:text-left lg:text-4xl text-primary">&lt;projects/&gt;</h1>
+    <section id="projects" className="container mx-auto px-4 mb-32 py-20">
+      <h1 className="text-3xl font-bold mb-4 lg:text-left lg:text-4xl text-primary font-mono">$ cd projects</h1>
       <motion.div
         className="grid grid-cols-1 justify-items-center items-center md:grid-cols-3 gap-6"
         variants={containerVariants}
@@ -135,6 +135,6 @@ export function Projects() {
           </div>
         </motion.div>
       </motion.div>
-    </div>
+    </section>
   );
 }

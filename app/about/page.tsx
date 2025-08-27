@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function Page() {
     return (
@@ -23,7 +22,7 @@ export default function Page() {
                     </div>
                 </div>
                 <div>
-                    <h2 className="text-xl font-semibold mb-2">About Me</h2>
+                    <h2 className="text-xl font-semibold mb-2 font-mono">$ whoami</h2>
                     <p className="mb-4 text-sm md:text-base">
                         I am a software engineer based in Newmarket, Ontario, Canada. I specialize in backend development and focus on bridging the technical gap between ideas and implementation. Currently, I am a fifth-year
                         student at{' '}
@@ -66,6 +65,19 @@ export default function Page() {
 
             {/* Right: Image, Kaizen, Spotify */}
             <section className="flex-1 flex flex-col gap-6">
+                <div className="w-full">
+                    <pre className="border border-black dark:bg-card dark:text-gray-100 p-6 rounded-lg overflow-x-auto font-mono text-sm">
+                        {`class Programmer:
+    pronouns = 'He/Him'
+    interests = ['Sports', 'Comics', 'Anime', 'Fitness']
+    desc = 'A software engineer, specializing in building digital solutions.'
+    def goalsFor2025(self):
+        LandAJob(self, internship, job)
+        CompleteHalfMarathon(persistence)
+        Travel(lots_of_money)
+        MakeADifference(creativity)`}
+                    </pre>
+                </div>
                 {/* Lantern Image */}
                 <div className="relative w-full aspect-[16/10] md:aspect-[21/9] overflow-hidden rounded-2xl shadow-lg mb-2">
                     <Image
@@ -78,8 +90,9 @@ export default function Page() {
                 </div>
                 {/* Spotify */}
                 <div className="rounded-xl overflow-hidden shadow-lg">
-                    <iframe style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/playlist/0EwEUcXt6bYR67ctiHkV2S?utm_source=generator" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" />
+                    <iframe data-testid="embed-iframe" style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/playlist/6ItNIZJk7WHD81dCV4HAiZ?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
+                {/* Coding Stats */}
             </section>
         </main>
     );

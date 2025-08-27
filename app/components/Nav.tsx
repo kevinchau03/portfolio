@@ -33,22 +33,22 @@ const Nav = () => {
 
   // A helper function to get a nice directory name from the current pathname.
   const getDirectoryName = (): string => {
-    // Convert "/" to "~/home" and any other pathname to "~/<page>"
+    // Convert "/" to "kevin@portfolio:~$" and any other pathname to "~/<page>"
     if (pathname === '/') {
-      return '~/home';
+      return 'kevin@portfolio:~$';
     }
-    // Remove any leading/trailing slashes and add the "~/" prefix.
+    // Remove leading/trailing slashes and format as subdirectory
     const formattedPath = pathname.replace(/^\/|\/$/g, '');
-    return `~/home/${formattedPath}`;
+    return `kevin@portfolio:/${formattedPath}$`;
   };
 
   return (
     <nav className="container sticky top-5 z-50 rounded-xl border border-background bg-white dark:border-white py-2 dark:bg-background">
       <div className="flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold text-primary flex items-center">
+        <Link href="/" className="text-2xl font-bold text-primary flex items-center font-mono">
           {getDirectoryName()}
           {/* Blinking cursor */}
-          <span className="ml-2 animate-blink">|</span>
+          <span className="ml-1 animate-blink">|</span>
         </Link>
 
         {/* Desktop Navigation Links */}
