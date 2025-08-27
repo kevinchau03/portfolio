@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
-import { Gabarito } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Nav from "@/app/components/Nav";
 import { Footer } from "@/app/components/Footer";
 import { Analytics } from "@vercel/analytics/react"
 import { ThemeProvider } from 'next-themes';
+import { LoadingProvider } from '@/app/components/LoadingProvider';
 
-const gabarito = Gabarito({
-  subsets: ["latin"],
-  weight: ["400","700"],
+const monaspace = localFont({
+  src: [
+    {
+      path: './fonts/MonaspaceNeonFrozen-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-monaspace',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -23,18 +31,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${gabarito.className} antialiased`}
-      >
+      <body className={`${monaspace.className} antialiased`}>
         <ThemeProvider 
           attribute="class" 
           defaultTheme="dark" 
           enableSystem={true}
           disableTransitionOnChange
         >
-          <Nav />
-          {children}
-          <Analytics />
-          <Footer />
+          <LoadingProvider>
+            <Nav />
+            {children}
+            <Analytics />
+            <Footer />
+          </LoadingProvider>
         </ThemeProvider>
       </body>
     </html>

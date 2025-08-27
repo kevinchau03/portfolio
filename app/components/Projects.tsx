@@ -49,7 +49,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="container mx-auto px-4 mb-32 py-20">
-      <h1 className="text-3xl font-bold mb-4 lg:text-left lg:text-4xl text-primary font-mono">$ cd projects</h1>
+      <h1 className="text-3xl font-bold mb-4 lg:text-left lg:text-4xl text-primary">$ cd projects</h1>
       <motion.div
         className="grid grid-cols-1 justify-items-center items-center md:grid-cols-3 gap-6"
         variants={containerVariants}

@@ -96,7 +96,7 @@ export function Experience() {
 
   return (
     <section id="experience" className="container mx-auto px-4 flex flex-col gap-6 mb-24 py-10">
-      <h1 className="text-3xl font-bold text-primary lg:text-4xl font-mono">$ cd experience</h1>
+      <h1 className="text-3xl font-bold text-primary lg:text-4xl">$ cd experience</h1>
       <motion.div
         className="flex flex-col gap-4"
         variants={containerVariants}

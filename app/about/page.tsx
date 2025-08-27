@@ -22,22 +22,34 @@ export default function Page() {
                     </div>
                 </div>
                 <div>
-                    <h2 className="text-xl font-semibold mb-2 font-mono">$ whoami</h2>
-                    <p className="mb-4 text-sm md:text-base">
-                        I am a software engineer based in Newmarket, Ontario, Canada. I specialize in backend development and focus on bridging the technical gap between ideas and implementation. Currently, I am a fifth-year
+                    <h2 className="text-xl font-semibold mb-2">$ whoami</h2>
+                    <p className="mb-4 text-sm">
+                        I am a software engineer based in Newmarket, Ontario, Canada. Focusing on bridging the technical gap between ideas and implementation is what drives me to code. Currently, I am a fifth-year
                         student at{' '}
                         <a href="https://www.uwo.ca/index.html" target="_blank" rel="noopener noreferrer" className="text-primary font-bold">
                             Western University
                         </a>
                         , finishing up my degree in the Specialization in Computer Science.
                     </p>
-                    <p className="mb-4 text-sm md:text-base">
+                    <p className="mb-4 text-sm">
                         Away from the screen, I enjoy playing basketball, watching anime, reading comic books, and fitness.
                         I like to live by a japanese word called "Kaizen".
                     </p>
                 </div>
+                {/* Kaizen Card */}
+                <div className="flex mb-4 text-sm dark:bg-card border border-black rounded-xl p-4">
+                    <div className="bg-primary w-[5px] rounded-full"></div>
+                    <div className="ml-4">
+                        <p className="font-semibold">Kaizen</p>
+                        <p className="italic text-sm text-gray-500">[ki-zan]</p>
+                        <p className="mt-2">
+                            A Japanese term meaning "change for the better" or "continuous improvement,"
+                            which serves as the basis for Japanese business philosophy.
+                        </p>
+                    </div>
+                </div>
                 {/* Tech setup */}
-                <div className="flex mb-4 text-sm md:text-base dark:bg-card border border-black rounded-xl p-4">
+                <div className="flex mb-4 text-sm dark:bg-card border border-black rounded-xl p-4">
                     <div className="bg-primary w-[5px] rounded-full"></div>
                     <div className="ml-4">
                         <p className="font-semibold mb-2">My Current Tech Set Up:</p>
@@ -49,24 +61,12 @@ export default function Page() {
                         </ul>
                     </div>
                 </div>
-                {/* Kaizen Card */}
-                <div className="flex mb-4 text-sm md:text-base dark:bg-card border border-black rounded-xl p-4">
-                    <div className="bg-primary w-[5px] rounded-full"></div>
-                    <div className="ml-4">
-                        <p className="font-bold text-lg">Kaizen</p>
-                        <p className="italic text-sm text-gray-500">[ki-zan]</p>
-                        <p className="mt-2">
-                            A Japanese term meaning "change for the better" or "continuous improvement,"
-                            which serves as the basis for Japanese business philosophy.
-                        </p>
-                    </div>
-                </div>
             </section>
 
             {/* Right: Image, Kaizen, Spotify */}
             <section className="flex-1 flex flex-col gap-6">
                 <div className="w-full">
-                    <pre className="border border-black dark:bg-card dark:text-gray-100 p-6 rounded-lg overflow-x-auto font-mono text-sm">
+                    <pre className="border border-black dark:bg-card dark:text-gray-100 p-6 rounded-lg overflow-x-auto text-sm">
                         {`class Programmer:
     pronouns = 'He/Him'
     interests = ['Sports', 'Comics', 'Anime', 'Fitness']
@@ -82,7 +82,7 @@ export default function Page() {
                 <div className="relative w-full aspect-[16/10] md:aspect-[21/9] overflow-hidden rounded-2xl shadow-lg mb-2">
                     <Image
                         src="/lantern.webp"
-                        alt="Japanese lantern at night"
+                        alt="Water lantern at night"
                         fill
                         className="object-cover hover:scale-105 transition-transform duration-500"
                         priority

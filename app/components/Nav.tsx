@@ -45,7 +45,7 @@ const Nav = () => {
   return (
     <nav className="container sticky top-5 z-50 rounded-xl border border-background bg-white dark:border-white py-2 dark:bg-background">
       <div className="flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold text-primary flex items-center font-mono">
+        <Link href="/" className="text-base md:text-2xl font-bold text-primary flex items-center">
           {getDirectoryName()}
           {/* Blinking cursor */}
           <span className="ml-1 animate-blink">|</span>
