@@ -36,10 +36,10 @@ export function Loading() {
   }, [currentIndex, loadingText])
 
   return (
-    <div className="fixed inset-0 bg-background z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center dark:bg-background">
       <div className="text-center space-y-8">
         {/* Terminal-style loading */}
-        <div className="bg-card border border-border rounded-lg p-6 font-mono shadow-lg min-w-[300px]">
+        <div className="border border-border rounded-lg p-6 font-mono shadow-lg min-w-[300px] dark:bg-card">
           <div className="flex items-center gap-2 mb-4 text-sm text-muted-foreground">
             <div className="flex gap-1">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -57,7 +57,7 @@ export function Loading() {
             
             <div className="text-muted-foreground text-sm">
               {displayText}
-              <span className="animate-pulse">|</span>
+              <span className="animate-pulse text-green-400">|</span>
             </div>
             
             {/* Progress bar */}

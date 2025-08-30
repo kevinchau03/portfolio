@@ -2,12 +2,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 export function Hero() {
   const [displayedText, setDisplayedText] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showCursor, setShowCursor] = useState(true)
   const [inputValue, setInputValue] = useState('')
+  const router = useRouter()
 
   const fullText = 'Software Engineer at Constant Closer'
 
@@ -59,8 +61,8 @@ export function Hero() {
           element.scrollIntoView({ behavior: 'smooth' })
         }
       } else {
-        // Navigate to different page
-        window.location.href = targetSection
+        // Use Next.js router for page navigation (will trigger loading)
+        router.push(targetSection)
       }
       setInputValue('') // Clear input after navigation
     } else {

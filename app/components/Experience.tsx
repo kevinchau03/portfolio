@@ -14,8 +14,8 @@ export function Experience() {
       id: 1,
       title: "Constant Closer",
       role: "Software Engineer",
-      period: "March 2025 - Present",
-      duration: "Currently Working",
+      period: "March 2025 - August 2025",
+      duration: "8 Months",
       location: "Remote",
       image: "/constantcloser.svg",
       details: "Currently developing an AI Sales Agent for users who want to close more leads from their email lists.",
@@ -52,8 +52,12 @@ export function Experience() {
     },
   ];
 
-  const handleToggle = (id: number): void => {
-    setExpanded((prev) => (prev === id ? null : id));
+  const handleMouseEnter = (id: number): void => {
+    setExpanded(id);
+  };
+
+  const handleMouseLeave = (): void => {
+    setExpanded(null);
   };
 
   useEffect(() => {
@@ -77,14 +81,14 @@ export function Experience() {
         observer.unobserve(ref.current);
       }
     };
-  },);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3, // Stagger effect
+        staggerChildren: 0.3,
       },
     },
   };
@@ -96,7 +100,7 @@ export function Experience() {
 
   return (
     <section id="experience" className="container mx-auto px-4 flex flex-col gap-6 mb-24 py-10">
-      <h1 className="text-3xl font-bold text-primary lg:text-4xl">$ cd experience</h1>
+      <h1 className="text-2xl font-bold text-blue-400 lg:text-3xl"><span className="text-green-400">$</span> cd experience</h1>
       <motion.div
         className="flex flex-col gap-4"
         variants={containerVariants}
@@ -108,29 +112,29 @@ export function Experience() {
           <motion.div
             key={exp.id}
             className={`
-            flex flex-col rounded-lg border border-black dark:bg-card p-3
-            ${expanded === exp.id
-              ? 'shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)] dark:shadow-white/20'
-              : 'shadow-none'}
-          `}
+              flex flex-col rounded-lg border border-black dark:bg-card p-3 transition-all duration-300
+              ${expanded === exp.id
+                ? 'shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)] dark:shadow-white/20 transform scale-[1.02]'
+                : 'shadow-none hover:shadow-md'}
+            `}
             variants={cardVariants}
+            onMouseEnter={() => handleMouseEnter(exp.id)}
+            onMouseLeave={handleMouseLeave}
           >
-            <div
-              className="flex cursor-pointer"
-              onClick={() => handleToggle(exp.id)}
-            >
+            <div className="flex cursor-pointer">
               <Image src={exp.image} alt={exp.title} width={50} height={50} className="rounded-full" />
               <div className="group ml-4 flex-grow flex-col items-center">
                 <div className="flex flex-col">
                   <div className="flex items-center justify-between gap-x-2">
-                    <h3 className="inline-flex items-center justify-center font-medium leading-none text-md">
+                    <h3 className="inline-flex items-center justify-center text-lg font-bold leading-tight">
                       {exp.title}
-                      {expanded === exp.id ? (
-                        <ChevronDown size={16} className="ml-1" />
-                      ) : (
-                        <ChevronRight size={16} className="ml-1" />
-                      )}
-
+                      <motion.div
+                        animate={{ rotate: expanded === exp.id ? 90 : 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="ml-1"
+                      >
+                        <ChevronRight size={16} />
+                      </motion.div>
                     </h3>
                     <div className="text-right tabular-nums">
                       {exp.period}
@@ -144,14 +148,19 @@ export function Experience() {
                 </div>
               </div>
             </div>
-            <div
-              className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${expanded === exp.id ? 'max-h-40' : 'max-h-0'
-                }`}
+            <motion.div
+              initial={false}
+              animate={{
+                height: expanded === exp.id ? 'auto' : 0,
+                opacity: expanded === exp.id ? 1 : 0
+              }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="overflow-hidden"
             >
               <div className="mt-4 p-4 rounded-lg">
-                <p className="text-sm">{exp.details}</p>
+                <p className="leading-relaxed text-muted text-sm">{exp.details}</p>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         ))}
       </motion.div>
