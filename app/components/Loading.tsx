@@ -52,7 +52,7 @@ export function Loading() {
           <div className="space-y-3">
             <div className="flex items-center gap-2">
               <span className="text-green-400">$</span>
-              <span className="text-blue-400">npm start</span>
+              <span className="text-primary">npm start</span>
             </div>
             
             <div className="text-muted-foreground text-sm">
@@ -61,7 +61,7 @@ export function Loading() {
             </div>
             
             {/* Progress bar */}
-            <div className="w-full bg-muted rounded-full h-2">
+            <div className="w-full border border-black rounded-full h-2">
               <div 
                 className="bg-primary h-2 rounded-full transition-all duration-300 ease-out"
                 style={{ width: `${progress}%` }}
@@ -72,11 +72,6 @@ export function Loading() {
               {progress}%
             </div>
           </div>
-        </div>
-
-        {/* Spinning loader as backup */}
-        <div className="flex justify-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
         </div>
       </div>
     </div>

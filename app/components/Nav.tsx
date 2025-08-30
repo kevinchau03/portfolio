@@ -1,101 +1,206 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const [inputValue, setInputValue] = useState('')
+  const [showCursor, setShowCursor] = useState(true)
   const { theme, setTheme, systemTheme } = useTheme()
-  const pathname = usePathname();
+  const pathname = usePathname()
+  const router = useRouter()
 
   // avoid hydration mismatch
   useEffect(() => { setMounted(true) }, [])
 
+  // Cursor blinking effect
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev)
+    }, 530)
+    
+    return () => clearInterval(cursorInterval)
+  }, [])
+
   if (!mounted) {
     return (
       <nav className="container mx-auto py-3">
-        {/* you can leave a minimal placeholder here,
-            or even null if you prefer no Nav until mount */}
+        {/* minimal placeholder */}
       </nav>
     )
   }
 
   const currentTheme = theme === 'system' ? systemTheme : theme
 
-  // Function to toggle the menu
-  const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+  const toggleMenu = () => setIsOpen(!isOpen)
   const toggleTheme = () => setTheme(currentTheme === 'dark' ? 'light' : 'dark')
 
-  // A helper function to get a nice directory name from the current pathname.
+  // Get directory name for display
   const getDirectoryName = (): string => {
-    // Convert "/" to "kevin@portfolio:~$" and any other pathname to "~/<page>"
     if (pathname === '/') {
-      return 'kevin@portfolio:~$';
+      return 'kevin@portfolio:~$'
     }
-    // Remove leading/trailing slashes and format as subdirectory
-    const formattedPath = pathname.replace(/^\/|\/$/g, '');
-    return `kevin@portfolio:/${formattedPath}$`;
-  };
+    const formattedPath = pathname.replace(/^\/|\/$/g, '')
+    return `kevin@portfolio:~/${formattedPath}$`
+  }
+
+  // Handle command execution
+  const executeCommand = (command: string) => {
+    const cleanCmd = command.toLowerCase().trim()
+    
+    // Command mappings
+    const commands: { [key: string]: () => void } = {
+      'cd about': () => router.push('/about'),
+      'cd home': () => router.push('/'),
+      'cd ~': () => router.push('/'),
+      'cd /': () => router.push('/'),
+      'cd projects': () => {
+        if (pathname === '/') {
+          document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })
+        } else {
+          router.push('/#projects')
+        }
+      },
+      'cd experience': () => {
+        if (pathname === '/') {
+          document.querySelector('#experience')?.scrollIntoView({ behavior: 'smooth' })
+        } else {
+          router.push('/#experience')
+        }
+      },
+      'ls': () => {
+        setInputValue('about-me.md  projects/  experience/  resume.pdf')
+        setTimeout(() => setInputValue(''), 2000)
+      },
+      'pwd': () => {
+        setInputValue(pathname === '/' ? '/home/kevin' : `/home/kevin${pathname}`)
+        setTimeout(() => setInputValue(''), 2000)
+      },
+      'whoami': () => {
+        setInputValue('kevin - Software Engineer')
+        setTimeout(() => setInputValue(''), 2000)
+      },
+      'clear': () => setInputValue(''),
+      'help': () => {
+        setInputValue('available: cd [about|home|projects|experience], ls, pwd, whoami, clear')
+        setTimeout(() => setInputValue(''), 3000)
+      }
+    }
+
+    // Check if command exists
+    if (commands[cleanCmd]) {
+      commands[cleanCmd]()
+      if (!['ls', 'pwd', 'whoami', 'help', 'clear'].includes(cleanCmd)) {
+        setInputValue('') // Clear input for navigation commands
+      }
+    } else {
+      // Show error message
+      setInputValue(`bash: ${command}: command not found`)
+      setTimeout(() => setInputValue(''), 2000)
+    }
+  }
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      executeCommand(inputValue)
+    }
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value)
+  }
 
   return (
-    <nav className="container sticky top-5 z-50 rounded-xl border border-background bg-white dark:border-white py-2 dark:bg-background">
-      <div className="flex items-center justify-between">
-        <Link href="/" className="text-base md:text-2xl font-bold text-primary flex items-center">
-          {getDirectoryName()}
-          {/* Blinking cursor */}
-          <span className="ml-1 animate-blink">|</span>
-        </Link>
+    <nav className="container sticky top-5 z-50 rounded-xl bg-white border border-black dark:bg-card py-2 mx-auto">
+      <div className="flex items-center justify-between px-4">
+        {/* Desktop: Interactive Command Line */}
+        <div className="hidden md:flex items-center flex-1">
+          <span className="text-sm font-bold text-primary mr-2">
+            {getDirectoryName()}
+          </span>
+          <input
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
+            className="bg-transparent border-none outline-none text-sm text-foreground placeholder-muted-foreground flex-1 min-w-0"
+            placeholder="cd about | help"
+          />
+        </div>
+
+        {/* Mobile: Just Directory Name */}
+        <div className="md:hidden flex-1">
+          <span className="text-sm font-bold text-primary">
+            {getDirectoryName()}
+          </span>
+        </div>
 
         {/* Desktop Navigation Links */}
         <div className="hidden items-center md:flex space-x-6">
-          <Link href="/about" className="hover:text-primary hover:font-bold">
+          <Link href="/about" className="hover:text-primary transition-colors text-sm">
             about-me.md
           </Link>
-          <a download={true} href="/Kevin_Chau_Software_Engineering_Resume.pdf" className='bg-primary text-white p-2 items-center justify-center rounded-md hover:bg-white transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)]
-                  transition duration-300 ease-in-out hover:text-primary transition duration-300 ease-in-out'>
-            kevin_resume
-          </a>
+          <div className="flex gap-2">
+            <a
+              href="/Kevin_Chau_Software_Engineering_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary/10 text-primary px-3 py-1 rounded-md hover:bg-primary/20 transition-colors text-sm"
+            >
+              view
+            </a>
+            <a
+              download={true}
+              href="/Kevin_Chau_Software_Engineering_Resume.pdf"
+              className="bg-primary text-white px-3 py-1 rounded-md hover:bg-primary/80 transition-colors text-sm"
+            >
+              download
+            </a>
+          </div>
           {/* Theme toggle */}
           {mounted && (
             <button
               onClick={toggleTheme}
               aria-label="Toggle Dark Mode"
-              className="mr-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2 rounded-lg hover:bg-primary/10 transition-colors"
             >
               {currentTheme === 'dark' ? (
-                <Sun className="w-5 h-5 text-white-300" />
+                <Sun className="w-5 h-5 text-yellow-400" />
               ) : (
-                <Moon className="w-5 h-5 text-white-800" />
+                <Moon className="w-5 h-5 text-foreground" />
               )}
             </button>
           )}
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        {/* Mobile Menu Button and Theme Toggle */}
+        <div className="md:hidden flex items-center gap-2">
           {mounted && (
             <button
               onClick={toggleTheme}
               aria-label="Toggle Dark Mode"
-              className="mr-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2 rounded-lg hover:bg-primary/10 transition-colors"
             >
               {currentTheme === 'dark' ? (
-                <Sun className="w-5 h-5 text-white-300" />
+                <Sun className="w-4 h-4 text-yellow-400" />
               ) : (
-                <Moon className="w-5 h-5 text-white-800" />
+                <Moon className="w-4 h-4 text-foreground" />
               )}
             </button>
           )}
-          <button onClick={toggleMenu} aria-label="Toggle Menu">
+          <button 
+            onClick={toggleMenu} 
+            aria-label="Toggle Menu"
+            className="p-2 rounded-lg hover:bg-primary/10 transition-colors"
+          >
             {isOpen ? (
-              <X className="w-6 h-6 text-primary" />
+              <X className="w-5 h-5 text-foreground" />
             ) : (
-              <Menu className="w-6 h-6 text-primary" />
+              <Menu className="w-5 h-5 text-foreground" />
             )}
           </button>
         </div>
@@ -103,20 +208,77 @@ const Nav = () => {
 
       {/* Mobile Navigation Links */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'
-          }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
       >
-        <div className="flex flex-col space-y-2">
-          <Link
-            href="/about"
-            className="block py-2 hover:text-primary hover:font-bold"
-            onClick={() => setIsOpen(false)}
-          >
-            About
-          </Link>
-          <a download={true} href="/Kevin_Chau_Software_Engineering_Resume.pdf" className="bg-primary text-white p-2 items-center justify-center rounded-md border-2 border-back-black hover:text-primary transition duration-300 ease-in-out">
-            Resume
-          </a>
+        <div className="px-4 pb-4 pt-4 border-t border-border mt-2">
+          <div className="flex flex-col space-y-3">
+            <Link
+              href="/"
+              className="block py-2 px-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-sm"
+              onClick={() => setIsOpen(false)}
+            >
+              🏠 home
+            </Link>
+            <Link
+              href="/about"
+              className="block py-2 px-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-sm"
+              onClick={() => setIsOpen(false)}
+            >
+              📄 about-me.md
+            </Link>
+            <button
+              onClick={() => {
+                if (pathname === '/') {
+                  document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })
+                } else {
+                  router.push('/#projects')
+                }
+                setIsOpen(false)
+              }}
+              className="block py-2 px-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-sm text-left"
+            >
+              💼 projects
+            </button>
+            <button
+              onClick={() => {
+                if (pathname === '/') {
+                  document.querySelector('#experience')?.scrollIntoView({ behavior: 'smooth' })
+                } else {
+                  router.push('/#experience')
+                }
+                setIsOpen(false)
+              }}
+              className="block py-2 px-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors text-sm text-left"
+            >
+              💻 experience
+            </button>
+            
+            {/* Resume Links */}
+            <div className="pt-2 border-t border-border">
+              <p className="text-xs text-muted-foreground mb-2 px-3">Resume:</p>
+              <div className="flex flex-col gap-2">
+                <a
+                  href="/Kevin_Chau_Software_Engineering_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-primary/10 text-primary py-2 px-3 rounded-lg hover:bg-primary/20 transition-colors text-sm text-center"
+                  onClick={() => setIsOpen(false)}
+                >
+                  👁️ view resume
+                </a>
+                <a
+                  download={true}
+                  href="/Kevin_Chau_Software_Engineering_Resume.pdf"
+                  className="bg-primary text-white py-2 px-3 rounded-lg hover:bg-primary/80 transition-colors text-sm text-center"
+                  onClick={() => setIsOpen(false)}
+                >
+                  📥 download resume
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>

@@ -22,7 +22,7 @@ export function Footer() {
                     {/* Center - Command line style */}
                     <div className="hidden md:flex items-center text-sm font-mono text-muted-foreground">
                         <span className="text-green-400">$</span>
-                        <span className="ml-2 text-blue-400">uptime</span>
+                        <span className="ml-2 text-primary">uptime</span>
                         <span className="ml-2">Built with ❤️ and Next.js</span>
                     </div>
 
@@ -35,19 +35,19 @@ export function Footer() {
                             href="https://www.github.com/kevinchau03" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="group p-2 rounded-lg hover:bg-primary/10 transition-all duration-200"
+                            className="group flex items-center justify-center p-2 rounded-lg hover:bg-primary/10 transition-all duration-200"
                             aria-label="GitHub Profile"
                         >
-                            <GithubIcon className="w-6 h-6 fill-current text-muted-foreground group-hover:text-primary transition-colors" />
+                            <GithubIcon className="fill-current text-muted-foreground group-hover:text-primary transition-colors" />
                         </a>
                         <a 
                             href="https://www.linkedin.com/in/kevin-chau03" 
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group p-2 rounded-lg hover:bg-primary/10 transition-all duration-200"
+                            className="group flex items-center justify-center p-2 rounded-lg hover:bg-primary/10 transition-all duration-200"
                             aria-label="LinkedIn Profile"
                         >
-                            <LinkedinIcon className="w-6 h-6 fill-current text-muted-foreground group-hover:text-primary transition-colors" />
+                            <LinkedinIcon className="fill-current text-muted-foreground group-hover:text-primary transition-colors" />
                         </a>
                     </div>
                 </div>

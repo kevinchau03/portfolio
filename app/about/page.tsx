@@ -26,7 +26,7 @@ export default function Page() {
                 {/* Right: Definitions */}
                 <div className="flex-1 flex flex-col gap-4">
                     {/* Kaizen Card */}
-                    <div className="flex text-sm dark:bg-card border border-black rounded-xl p-4 border-l-4 border-l-primary">
+                    <div className="flex text-sm dark:bg-card border border-black rounded-xl p-4 border-l-8 border-l-primary">
                         <div className="ml-4">
                             <p className="font-semibold">Kaizen</p>
                             <p className="italic text-sm text-gray-500">[ki-zan]</p>
@@ -38,7 +38,7 @@ export default function Page() {
                     </div>
                     
                     {/* Tech setup */}
-                    <div className="flex text-sm dark:bg-card border border-black rounded-xl p-4 border-l-4 border-l-primary">
+                    <div className="flex text-sm dark:bg-card border border-black rounded-xl p-4 border-l-8 border-l-primary">
                         <div className="ml-4">
                             <p className="font-semibold mb-2">My Current Tech Set Up:</p>
                             <ul className="list-disc list-inside text-sm">
@@ -53,10 +53,10 @@ export default function Page() {
             </section>
 
             {/* Bottom Section: Image and Spotify Side by Side */}
-            <section className="flex flex-col md:flex-row gap-6">
+            <section className="flex flex-col md:flex-row gap-6" style={{ '--section-height': '352px' } as React.CSSProperties}>
                 {/* Lantern Image */}
                 <div className="flex-1">
-                    <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl shadow-lg">
+                    <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ height: 'var(--section-height)' }}>
                         <Image
                             src="/lantern.webp"
                             alt="Water lantern at night"
@@ -71,10 +71,10 @@ export default function Page() {
                 <div className="flex-1">
                     <iframe 
                         data-testid="embed-iframe" 
-                        style={{ borderRadius: '12px' }} 
-                        src="https://open.spotify.com/embed/playlist/6ItNIZJk7WHD81dCV4HAiZ?utm_source=generator&theme=0" 
+                        style={{ borderRadius: '12px', height: 'var(--section-height)' }} 
+                        src="https://open.spotify.com/embed/playlist/6ItNIZJk7WHD81dCV4HAiZ?utm_source=generator" 
                         width="100%" 
-                        height="100%" 
+                        frameBorder="0" 
                         allowFullScreen={false} 
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                         loading="lazy"
