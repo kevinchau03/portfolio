@@ -48,88 +48,14 @@ const Nav = () => {
     return `kevin@portfolio:~/${formattedPath}$`
   }
 
-  // Handle command execution
-  const executeCommand = (command: string) => {
-    const cleanCmd = command.toLowerCase().trim()
-    
-    // Command mappings
-    const commands: { [key: string]: () => void } = {
-      'cd about': () => router.push('/about'),
-      'cd home': () => router.push('/'),
-      'cd ~': () => router.push('/'),
-      'cd /': () => router.push('/'),
-      'cd projects': () => {
-        if (pathname === '/') {
-          document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })
-        } else {
-          router.push('/#projects')
-        }
-      },
-      'cd experience': () => {
-        if (pathname === '/') {
-          document.querySelector('#experience')?.scrollIntoView({ behavior: 'smooth' })
-        } else {
-          router.push('/#experience')
-        }
-      },
-      'ls': () => {
-        setInputValue('about-me.md  projects/  experience/  resume.pdf')
-        setTimeout(() => setInputValue(''), 2000)
-      },
-      'pwd': () => {
-        setInputValue(pathname === '/' ? '/home/kevin' : `/home/kevin${pathname}`)
-        setTimeout(() => setInputValue(''), 2000)
-      },
-      'whoami': () => {
-        setInputValue('kevin - Software Engineer')
-        setTimeout(() => setInputValue(''), 2000)
-      },
-      'clear': () => setInputValue(''),
-      'help': () => {
-        setInputValue('available: cd [about|home|projects|experience], ls, pwd, whoami, clear')
-        setTimeout(() => setInputValue(''), 3000)
-      }
-    }
-
-    // Check if command exists
-    if (commands[cleanCmd]) {
-      commands[cleanCmd]()
-      if (!['ls', 'pwd', 'whoami', 'help', 'clear'].includes(cleanCmd)) {
-        setInputValue('') // Clear input for navigation commands
-      }
-    } else {
-      // Show error message
-      setInputValue(`bash: ${command}: command not found`)
-      setTimeout(() => setInputValue(''), 2000)
-    }
-  }
-
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      executeCommand(inputValue)
-    }
-  }
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value)
-  }
-
   return (
     <nav className="container sticky top-5 z-50 rounded-xl bg-white border border-black dark:bg-card py-2 mx-auto">
       <div className="flex items-center justify-between px-4">
         {/* Desktop: Interactive Command Line */}
         <div className="hidden md:flex items-center flex-1">
-          <span className="text-sm font-bold text-primary mr-2">
+          <Link href="/" className="font-bold text-primary mr-2 hover:text-primary/80 transition-colors cursor-pointer">
             {getDirectoryName()}
-          </span>
-          <input
-            type="text"
-            value={inputValue}
-            onChange={handleInputChange}
-            onKeyPress={handleKeyPress}
-            className="bg-transparent border-none outline-none text-sm text-foreground placeholder-muted-foreground flex-1 min-w-0"
-            placeholder="cd about | help"
-          />
+          </Link>
         </div>
 
         {/* Mobile: Just Directory Name */}

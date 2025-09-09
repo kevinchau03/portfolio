@@ -10,7 +10,7 @@ export function Footer() {
                 <div className="flex flex-col items-center text-center lg:justify-between w-full p-6 lg:flex-row gap-4">
                     {/* Left side - Copyright */}
                     <div className="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-4">
-                        <p className="text-sm text-muted-foreground font-mono">
+                        <p className="text-sm text-muted-foreground ">
                             &copy; 2025 Kevin Chau
                         </p>
                         <div className="hidden lg:block w-1 h-1 bg-muted-foreground rounded-full"></div>
@@ -20,7 +20,7 @@ export function Footer() {
                     </div>
 
                     {/* Center - Command line style */}
-                    <div className="hidden md:flex items-center text-sm font-mono text-muted-foreground">
+                    <div className="hidden md:flex items-center text-sm  text-muted-foreground">
                         <span className="text-green-400">$</span>
                         <span className="ml-2 text-primary">uptime</span>
                         <span className="ml-2">Built with ❤️ and Next.js</span>
@@ -28,7 +28,7 @@ export function Footer() {
 
                     {/* Right side - Social Links */}
                     <div className="flex items-center gap-4">
-                        <span className="text-xs text-muted-foreground font-mono mr-2">
+                        <span className="text-xs text-muted-foreground  mr-2">
                             ./socials
                         </span>
                         <a 

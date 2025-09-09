@@ -56,10 +56,10 @@ export function Projects() {
       icon: null
     },
     {
-      title: "Milo Financial",
-      description: "Your own personal AI financial assistant. Start saving better with Milo.",
-      image: "/Milo.jpg",
-      link: "https://hack-western11.vercel.app/",
+      title: "Northstar Countertops",
+      description: "Marble countertop company based in Toronto, Ontario.",
+      image: "/northstar_logo.jpg",
+      link: "https://www.northstarcountertops.ca/",
       icon: null
     },
     {
