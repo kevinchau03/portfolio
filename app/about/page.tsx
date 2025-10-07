@@ -26,7 +26,7 @@ export default function Page() {
                 {/* Right: Definitions */}
                 <div className="flex-1 flex flex-col gap-4">
                     {/* Kaizen Card */}
-                    <div className="flex text-sm dark:bg-card border border-black rounded-xl p-4 border-l-8 border-l-primary">
+                    <div className="flex text-sm bg-white dark:bg-card border border-black rounded-xl p-4 border-l-8 border-l-primary">
                         <div className="ml-4">
                             <p className="font-semibold">Kaizen</p>
                             <p className="italic text-sm text-gray-500">[ki-zan]</p>
@@ -38,7 +38,7 @@ export default function Page() {
                     </div>
                     
                     {/* Tech setup */}
-                    <div className="flex text-sm dark:bg-card border border-black rounded-xl p-4 border-l-8 border-l-primary">
+                    <div className="flex text-sm bg-white dark:bg-card border border-black rounded-xl p-4 border-l-8 border-l-primary">
                         <div className="ml-4">
                             <p className="font-semibold mb-2">My Current Tech Set Up:</p>
                             <ul className="list-disc list-inside text-sm">

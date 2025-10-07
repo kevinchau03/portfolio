@@ -81,6 +81,7 @@ export function Projects() {
   return (
     <section id="projects" className="container mx-auto px-4 mb-32 py-20">
       <h1 className="text-2xl font-bold mb-4 lg:text-left lg:text-3xl text-primary"><span className="text-green-400">$</span> cd projects</h1>
+      <p className="text-sm text-muted mb-8">A selection of projects I've worked on recently</p>
       <motion.div
         className="grid grid-cols-1 justify-items-center items-stretch md:grid-cols-3 gap-6"
         variants={containerVariants}
@@ -94,7 +95,7 @@ export function Projects() {
             variants={projectVariants} 
             className="w-full max-w-md"
           >
-            <div className="flex rounded-lg h-full p-6 flex-col border border-black dark:bg-card
+            <div className="flex rounded-lg h-full p-6 flex-col border border-black bg-white dark:bg-card 
                             transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)] dark:hover:shadow-white/20
                             transition duration-300 ease-in-out min-h-[280px]">
               

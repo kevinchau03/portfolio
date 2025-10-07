@@ -5,33 +5,31 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 export function Hero() {
-  const [displayedText, setDisplayedText] = useState('')
-  const [currentIndex, setCurrentIndex] = useState(0)
   const [showCursor, setShowCursor] = useState(true)
   const [inputValue, setInputValue] = useState('')
   const router = useRouter()
 
-  const fullText = 'Software Engineer at Constant Closer'
+  const handleCommand = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const command = inputValue.toLowerCase().trim()
 
-  useEffect(() => {
-    if (currentIndex < fullText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(fullText.slice(0, currentIndex + 1))
-        setCurrentIndex(currentIndex + 1)
-      }, 100) // Typing speed
-
-      return () => clearTimeout(timeout)
+    switch (command) {
+      case 'cd about':
+        router.push('/about')
+        break
+      case 'cd projects':
+        router.push('/#projects')
+        break
+      case 'cd experience':
+        router.push('/#experience')
+        break
+      default:
+        // Optional: handle unknown commands, e.g., show an error message
+        console.log(`Command not found: ${command}`)
+        setInputValue('') // Clear input after command
+        break
     }
-  }, [currentIndex, fullText])
-
-  // Cursor blinking effect
-  useEffect(() => {
-    const cursorInterval = setInterval(() => {
-      setShowCursor((prev) => !prev)
-    }, 530)
-
-    return () => clearInterval(cursorInterval)
-  }, [])
+  }
 
   return (
     <section id="hero" className="min-h-[80vh] flex items-center justify-center py-24 lg:py-32">
@@ -48,20 +46,14 @@ export function Hero() {
 
         <div className="flex-1 w-full">
           {/* Command Line Style Header */}
-          <div className="rounded-lg border border-black p-3 md:p-4 text-left shadow-lg dark:bg-card 
+          <div className="rounded-lg border border-black p-3 md:p-4 text-left shadow-lg bg-white dark:bg-card
                           h-[180px] md:h-[200px] flex flex-col">
             <div className="text-xs md:text-sm lg:text-base space-y-2 md:space-y-3">
               <div className="flex items-center gap-1 md:gap-2">
                 <span className="text-green-400">$</span>
                 <span className="text-primary text-xs md:text-sm">cat role.txt</span>
                 <span className="text-foreground ml-2 md:ml-4 text-xs md:text-sm truncate">
-                  🧑🏽‍💻 {displayedText}
-                  <span
-                    className={`${showCursor ? 'opacity-100' : 'opacity-0'
-                      } transition-opacity`}
-                  >
-                    |
-                  </span>
+                  🧑🏽‍💻 Software Engineer
                 </span>
               </div>
 
@@ -99,9 +91,17 @@ export function Hero() {
                 </Link>
               </div>
 
-              <div className="flex items-center gap-1 md:gap-2">
+              <form onSubmit={handleCommand} className="flex items-center gap-1 md:gap-2">
                 <span className="text-green-400">$</span>
-              </div>
+                <input
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  placeholder="cd about, projects, experience..."
+                  className="bg-transparent border-none focus:ring-0 focus:outline-none text-primary text-xs md:text-sm flex-1 min-w-0 placeholder:text-muted-foreground/50"
+                  autoFocus
+                />
+              </form>
             </div>
           </div>
         </div>

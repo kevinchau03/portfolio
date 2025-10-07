@@ -41,7 +41,7 @@ export function NavigationLoading() {
         </div>
         
         {/* Navigation text */}
-        <div className="text-sm text-muted-foreground font-mono">
+        <div className="text-sm text-white dark:text-black">
           {text} {dots}
         </div>
       </div>

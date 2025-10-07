@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  @apply bg-white transition-colors duration-300;
+  @apply bg-background-light transition-colors duration-300;
   scroll-behavior: smooth;
 }
 

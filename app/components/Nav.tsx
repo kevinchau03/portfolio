@@ -49,7 +49,7 @@ const Nav = () => {
   }
 
   return (
-    <nav className="container sticky top-5 z-50 rounded-xl bg-white border border-black dark:bg-card py-2 mx-auto">
+    <nav className="container sticky top-5 z-50 rounded-xl bg-white border border-black bg-card-light dark:bg-card py-2 mx-auto">
       <div className="flex items-center justify-between px-4">
         {/* Desktop: Interactive Command Line */}
         <div className="hidden md:flex items-center flex-1">

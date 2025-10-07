@@ -23,10 +23,12 @@ const config: Config = {
       colors: {
         'primary': '#3bb8dfff',
         'secondary': '#1e1e2a',
+        'background-light': '#f9f9f7',
         'background': '#000000',
         'nav-black': '#1e1e2a',
         'accent': '#5B88B2',
         'card': 'oklch(21% 0.006 285.885)',
+        'card-light': '#f0f0ea',
         'muted': '#64748b'
       },
     },

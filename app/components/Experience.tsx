@@ -18,7 +18,7 @@ export function Experience() {
       duration: "8 Months",
       location: "Remote",
       image: "/constantcloser.svg",
-      details: "Currently developing an AI Sales Agent for users who want to close more leads from their email lists.",
+      details: "Worked on the development of the Constant Closer platform, an AI email sales assistant that helps sales teams automate and optimize their outreach.",
     },
     {
       id: 2,
@@ -101,6 +101,7 @@ export function Experience() {
   return (
     <section id="experience" className="container mx-auto px-4 flex flex-col gap-6 mb-24 py-10">
       <h1 className="text-2xl font-bold text-primary lg:text-3xl"><span className="text-green-400">$</span> cd experience</h1>
+      <p className="text-sm text-muted">My past experiences that have shaped the way I work</p>
       <motion.div
         className="flex flex-col gap-4"
         variants={containerVariants}
@@ -112,7 +113,7 @@ export function Experience() {
           <motion.div
             key={exp.id}
             className={`
-              flex flex-col rounded-lg border border-black dark:bg-card p-3 transition-all duration-300
+              flex flex-col rounded-lg border border-black bg-white dark:bg-card p-3 transition-all duration-300
               ${expanded === exp.id
                 ? 'shadow-[8px_8px_0px_0px_rgba(0,0,0,0.8)] dark:shadow-white/20 transform scale-[1.02]'
                 : 'shadow-none hover:shadow-md'}
