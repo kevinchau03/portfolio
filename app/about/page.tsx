@@ -58,7 +58,7 @@ export default function Page() {
                 <div className="flex-1">
                     <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ height: 'var(--section-height)' }}>
                         <Image
-                            src="/lantern.webp"
+                            src="/assets/lantern.webp"
                             alt="Water lantern at night"
                             fill
                             className="object-cover hover:scale-105 transition-transform duration-500"

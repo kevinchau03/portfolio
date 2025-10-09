@@ -17,7 +17,7 @@ export function Experience() {
       period: "March 2025 - August 2025",
       duration: "8 Months",
       location: "Remote",
-      image: "/constantcloser.svg",
+      image: "/assets/constantcloser.svg",
       details: "Worked on the development of the Constant Closer platform, an AI email sales assistant that helps sales teams automate and optimize their outreach.",
     },
     {
@@ -27,7 +27,7 @@ export function Experience() {
       period: "May 2024 - Sept 2024",
       duration: "5 Months",
       location: "Remote",
-      image: "/HitMeUp.svg",
+      image: "/assets/HitMeUp.svg",
       details: "Contributed to the development of the mobile and web app for HitMeUp. An AI gatekeeper used for creators and professionals to capture leads automatically.",
     },
     {
@@ -37,7 +37,7 @@ export function Experience() {
       period: "Oct 2022 - Sept 2024",
       duration: "2 years, 3 Months",
       location: "London, Ontario",
-      image: "/WesternAI.svg",
+      image: "/assets/WesternAI.svg",
       details: "Led communication strategies and organized outreach programs to promote the club. Coordinated events and developed engaging content for the community.",
     },
     {
@@ -47,7 +47,7 @@ export function Experience() {
       period: "May 2022 - Sept 2022",
       duration: "5 Months",
       location: "Remote",
-      image: "/SC4K.avif",
+      image: "/assets/SC4K.avif",
       details: "Tutored children grades 5-12 in Python programming basics and logic building through interactive projects and games. Also created curriculum for future tutors.",
     },
   ];

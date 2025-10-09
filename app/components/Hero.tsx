@@ -36,7 +36,7 @@ export function Hero() {
       <div className="container mx-auto px-4 gap-8 flex flex-col md:flex-row items-center text-center max-w-4xl">
         <div className="flex-shrink-0 mb-6 md:mb-0">
           <Image
-            src="/portrait.JPG"
+            src="/assets/portrait.JPG"
             alt="Kevin Chau"
             width={150}
             height={150}

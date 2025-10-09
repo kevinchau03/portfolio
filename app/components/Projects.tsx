@@ -51,14 +51,14 @@ export function Projects() {
     {
       title: "Eleet Bot",
       description: "A discord bot that helps discord users grind leetcode!",
-      image: "/Eleet.webp",
+      image: "/assets/Eleet.webp",
       link: "https://github.com/kevinchau03/leetcode-bot",
       icon: null
     },
     {
       title: "Northstar Countertops",
       description: "Marble countertop company based in Toronto, Ontario.",
-      image: "/northstar_logo.jpg",
+      image: "/assets/northstar_logo.jpg",
       link: "https://www.northstarcountertops.ca/",
       icon: null
     },
