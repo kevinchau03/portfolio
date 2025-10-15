@@ -53,7 +53,7 @@ export function Hero() {
                 <span className="text-green-400">$</span>
                 <span className="text-primary text-xs md:text-sm">cat role.txt</span>
                 <span className="text-foreground ml-2 md:ml-4 text-xs md:text-sm truncate">
-                  🧑🏽‍💻 Software Engineer
+                  🧑🏽‍💻 Full-Stack/Back-end Developer
                 </span>
               </div>
 
