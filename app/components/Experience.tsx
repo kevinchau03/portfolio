@@ -12,42 +12,42 @@ export function Experience() {
   const experiences = [
     {
       id: 1,
-      title: "Constant Closer",
-      role: "Software Engineer",
-      period: "March 2025 - August 2025",
-      duration: "8 Months",
-      location: "Remote",
-      image: "/assets/constantcloser.svg",
-      details: "Worked on the development of the Constant Closer platform, an AI email sales assistant that helps sales teams automate and optimize their outreach.",
+      title: "constant closer",
+      role: "software engineer",
+      period: "march 2025 - august 2025",
+      duration: "8 months",
+      location: "remote",
+      image: "/assets/icons/constantcloser.svg",
+      details: "worked on the development of the constant closer platform, an ai email sales assistant that helps sales teams automate and optimize their outreach.",
     },
     {
       id: 2,
-      title: "HitMeUp.ai",
-      role: "Software Engineering Intern",
-      period: "May 2024 - Sept 2024",
-      duration: "5 Months",
-      location: "Remote",
-      image: "/assets/HitMeUp.svg",
-      details: "Contributed to the development of the mobile and web app for HitMeUp. An AI gatekeeper used for creators and professionals to capture leads automatically.",
+      title: "hitmeup.ai",
+      role: "software engineering intern",
+      period: "may 2024 - sept 2024",
+      duration: "5 months",
+      location: "remote",
+      image: "/assets/icons/HitMeUp.svg",
+      details: "contributed to the development of the mobile and web app for hitmeup. an ai gatekeeper used for creators and professionals to capture leads automatically.",
     },
     {
       id: 3,
-      title: "Western AI",
-      role: "Senior Director of Communications",
-      period: "Oct 2022 - Sept 2024",
-      duration: "2 years, 3 Months",
-      location: "London, Ontario",
-      image: "/assets/WesternAI.svg",
-      details: "Led communication strategies and organized outreach programs to promote the club. Coordinated events and developed engaging content for the community.",
+      title: "western ai club",
+      role: "senior director of communications",
+      period: "cct 2022 - sept 2024",
+      duration: "2 years, 3 months",
+      location: "london, ontario",
+      image: "/assets/icons/WesternAI.svg",
+      details: "led communication strategies and organized outreach programs to promote the club. coordinated events and developed engaging content for the community.",
     },
     {
       id: 4,
-      title: "Scratch Coding for Kids",
-      role: "Python Tutor",
-      period: "May 2022 - Sept 2022",
-      duration: "5 Months",
-      location: "Remote",
-      image: "/assets/SC4K.avif",
+      title: "scratch coding for kids",
+      role: "python tutor",
+      period: "may 2022 - sept 2022",
+      duration: "5 months",
+      location: "remote",
+      image: "/assets/icons/SC4K.avif",
       details: "Tutored children grades 5-12 in Python programming basics and logic building through interactive projects and games. Also created curriculum for future tutors.",
     },
   ];
@@ -101,7 +101,7 @@ export function Experience() {
   return (
     <section id="experience" className="container mx-auto px-4 flex flex-col gap-6 mb-24 py-10">
       <h1 className="text-2xl font-bold text-primary lg:text-3xl"><span className="text-green-400">$</span> cd experience</h1>
-      <p className="text-sm text-muted">My past experiences that have shaped the way I work</p>
+      <p className="text-sm text-muted">my past experiences that have shaped the way I work</p>
       <motion.div
         className="flex flex-col gap-4"
         variants={containerVariants}

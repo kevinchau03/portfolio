@@ -17,10 +17,7 @@ export default function Page() {
                         </a>. I've gained hands-on experience working with emerging startups, where I thrive wearing many hats. I like to think of myself as a solutions engineer, bridging the gap between big ideas and real-world implementation.
                     </p>
                     <p className="mb-4 text-sm">
-                        Outside of tech, you&apos;ll usually find me on the basketball court, at the gym, or deep in a comic book. I&apos;m a huge fan of anime and currently obsessed with Full Metal Alchemist Brotherhood.
-                    </p>
-                    <p className="mb-4 text-sm">
-                        I love connecting with founders, builders, and curious minds. If you&apos;ve read this far — let&apos;s connect! You can find me on my socials below.
+                        I love connecting with founders, builders, and curious minds. If you&apos;ve read this far, let&apos;s connect! You can find me on my socials below.
                     </p>
                 </div>
 
@@ -43,10 +40,10 @@ export default function Page() {
                         <div className="ml-4">
                             <p className="font-bold text-primary mb-2">My Current Tech Set Up:</p>
                             <ul className="list-disc list-inside text-sm">
-                                <li><span className="font-bold">Laptop:</span> 2019 Macbook Pro</li>
-                                <li><span className="font-bold">Keyboard:</span> GMMK TKL RGB</li>
-                                <li><span className="font-bold">Switches:</span> Akko Creamy Blues</li>
-                                <li><span className="font-bold">Mouse:</span> Razer Viper Mini</li>
+                                <li>Laptop: 2019 Macbook Pro</li>
+                                <li>Keyboard: GMMK TKL RGB</li>
+                                <li>Switches: Akko Creamy Blues</li>
+                                <li>Mouse: Razer Viper Mini</li>
                             </ul>
                         </div>
                     </div>
@@ -76,16 +73,7 @@ export default function Page() {
                  </div>
                 {/* Spotify */}
                 <div className="flex-1">
-                    <iframe 
-                        data-testid="embed-iframe" 
-                        style={{ borderRadius: '12px', height: 'var(--section-height)' }} 
-                        src="https://open.spotify.com/embed/playlist/6ItNIZJk7WHD81dCV4HAiZ?utm_source=generator" 
-                        width="100%" 
-                        frameBorder="0" 
-                        allowFullScreen={false} 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                        loading="lazy"
-                    />
+                    <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/playlist/5bmXvVYSJOi3rrhCeZvvRi?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowFullScreen={false} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
             </section>
         </main>
