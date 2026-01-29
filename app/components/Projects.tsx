@@ -70,8 +70,8 @@ export function Projects() {
     },
     {
       title: "Hair Salon Queue Manager",
-      description: "a salon queue management system built with react and node.",
-      image: "/assets/salon-queue.jpg",
+      description: "a salon queue management system built to help alleviate stress for my auntie.",
+      image: "/assets/salon-queue.JPG",
       link: "https://salon-queue.vercel.app/",
       icon: "/assets/icons/salon.png"
     }
