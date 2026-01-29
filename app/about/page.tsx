@@ -73,7 +73,17 @@ export default function Page() {
                  </div>
                 {/* Spotify */}
                 <div className="flex-1">
-                    <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/playlist/5bmXvVYSJOi3rrhCeZvvRi?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowFullScreen={false} allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <div className="relative w-full overflow-hidden rounded-2xl shadow-lg" style={{ height: 'var(--section-height)' } as React.CSSProperties}>
+                        <iframe
+                            data-testid="embed-iframe"
+                            src="https://open.spotify.com/embed/playlist/6ItNIZJk7WHD81dCV4HAiZ?utm_source=generator&theme=0"
+                            className="w-full h-full block"
+                            style={{ border: 0, borderRadius: 'inherit' }}
+                            allowFullScreen={false}
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"
+                        />
+                    </div>
                 </div>
             </section>
         </main>

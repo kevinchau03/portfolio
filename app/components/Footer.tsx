@@ -11,7 +11,7 @@ export function Footer() {
                     {/* Left side - Copyright */}
                     <div className="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-4">
                         <p className="text-sm text-muted-foreground ">
-                            &copy; 2025 Kevin Chau
+                            &copy; 2026 Kevin Chau
                         </p>
                         <div className="hidden lg:block w-1 h-1 bg-muted-foreground rounded-full"></div>
                         <p className="text-sm text-muted-foreground">

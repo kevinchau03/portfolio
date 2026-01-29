@@ -72,7 +72,7 @@ const Nav = () => {
           </Link>
           <div className="flex gap-2">
             <a
-              href="/Kevin_Chau_Software_Resume.pdf"
+              href="/Kevin_Chau_Software_Engineer_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary/10 text-primary px-3 py-1 rounded-md hover:bg-primary/20 transition-colors text-sm"
@@ -81,7 +81,7 @@ const Nav = () => {
             </a>
             <a
               download={true}
-              href="/Kevin_Chau_Software_Resume.pdf"
+              href="/Kevin_Chau_Software_Engineer_Resume.pdf"
               className="bg-primary text-white px-3 py-1 rounded-md hover:bg-primary/80 transition-colors text-sm"
             >
               download
@@ -186,7 +186,7 @@ const Nav = () => {
               <p className="text-xs text-muted-foreground mb-2 px-3">Resume:</p>
               <div className="flex flex-col gap-2">
                 <a
-                  href="/Kevin_Chau_Software_Resume.pdf"
+                  href="/Kevin_Chau_Software_Engineer_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-primary/10 text-primary py-2 px-3 rounded-lg hover:bg-primary/20 transition-colors text-sm text-center"
@@ -196,7 +196,7 @@ const Nav = () => {
                 </a>
                 <a
                   download={true}
-                  href="/Kevin_Chau_Software_Resume.pdf"
+                  href="/Kevin_Chau_Software_Engineer_Resume.pdf"
                   className="bg-primary text-white py-2 px-3 rounded-lg hover:bg-primary/80 transition-colors text-sm text-center"
                   onClick={() => setIsOpen(false)}
                 >

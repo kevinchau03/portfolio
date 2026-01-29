@@ -69,11 +69,11 @@ export function Projects() {
       icon: "/assets/icons/Eleet.webp"
     },
     {
-      title: "Northstar Countertops",
-      description: "marble countertop company based in toronto, ontario.",
-      image: "/assets/Northstar.JPG",
-      link: "https://www.northstarcountertops.ca/",
-      icon: "/assets/icons/northstar_logo.jpg"
+      title: "Hair Salon Queue Manager",
+      description: "a salon queue management system built with react and node.",
+      image: "/assets/salon-queue.jpg",
+      link: "https://salon-queue.vercel.app/",
+      icon: "/assets/icons/salon.png"
     }
   ];
 
