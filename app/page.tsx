@@ -7,8 +7,8 @@ export default function Page() {
     return (
         <main>
             <Hero />
-            <Projects />
             <Experience />
+            <Projects />
         </main>
     );
 }

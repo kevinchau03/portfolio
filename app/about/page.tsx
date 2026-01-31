@@ -10,11 +10,7 @@ export default function Page() {
                 <div className="flex-1">
                     <h2 className="text-xl font-semibold mb-2">$ whoami</h2>
                     <p className="mb-4 text-sm">
-                        I&apos;m a software engineer based in Newmarket, Ontario, Canada. I fell in love with coding when I first learned how to download songs off of Youtube-to-MP3, a godsend for my younger-self. This sparked my passion for building tools that make life easier for others. 
-                        I'm currently pursuing a Bachelor's degree in Computer Science at{' '}
-                        <a href="https://www.uwo.ca/index.html" target="_blank" rel="noopener noreferrer" className="text-primary font-bold">
-                            Western University
-                        </a>. I've gained hands-on experience working with emerging startups, where I thrive wearing many hats. I like to think of myself as a solutions engineer, bridging the gap between big ideas and real-world implementation.
+                        I&apos;m a software engineer based in <span className="text-primary">Newmarket, Ontario, Canada</span>. I fell in love with coding when I first learned how to download songs off of Youtube-to-MP3, a godsend for my younger-self. This sparked my passion for building tools that make life easier for others. I've gained hands-on experience working with emerging startups, where I thrived wearing many hats. I like to think of myself as a solutions engineer, bridging the gap between big ideas and real-world implementation.
                     </p>
                     <p className="mb-4 text-sm">
                         I love connecting with founders, builders, and curious minds. If you&apos;ve read this far, let&apos;s connect! You can find me on my socials below.

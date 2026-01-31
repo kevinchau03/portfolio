@@ -52,6 +52,7 @@ export function Projects() {
       title: "AlphaBack",
       description: "a financial model backtester built on amazon web services.",
       image: "/assets/AlphaBack.png",
+      technologies: ["AWS", "Python", "Lambda", "DynamoDB", "API Gateway", "S3"],
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
@@ -66,6 +67,7 @@ export function Projects() {
       description: "a discord bot that helps discord users grind leetcode!",
       image: "/assets/EleetBot.JPG",
       link: "https://github.com/kevinchau03/leetcode-bot",
+      technologies: ["Node.js", "Discord.js", "TypeScript"],
       icon: "/assets/icons/Eleet.webp"
     },
     {
@@ -73,6 +75,7 @@ export function Projects() {
       description: "a salon queue management system built to help alleviate stress for my auntie.",
       image: "/assets/salon-queue.JPG",
       link: "https://salon-queue.vercel.app/",
+      technologies: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
       icon: "/assets/icons/salon.png"
     }
   ];
@@ -80,7 +83,7 @@ export function Projects() {
   return (
     <section id="projects" className="container mx-auto px-4 mb-32 py-20">
       <h1 className="text-2xl font-bold mb-4 lg:text-left lg:text-3xl text-primary"><span className="text-green-400">$</span> cd projects</h1>
-      <p className="text-sm text-muted mb-8">a selection of projects I've worked on recently</p>
+      <p className="text-md text-muted mb-8">a selection of projects I've worked on recently</p>
       <motion.div
         className="grid grid-cols-1 justify-items-center items-stretch md:grid-cols-3 gap-6"
         variants={containerVariants}
@@ -137,31 +140,46 @@ export function Projects() {
 
                 {/* Description */}
                 <div className="mb-3">
-                  <p className="leading-relaxed text-muted text-xs">
+                  <p className="leading-relaxed text-muted text-sm">
                     {project.description}
                   </p>
                 </div>
+
+                {project.technologies && project.technologies.length > 0 && (
+                  <div className="mb-3 flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full border border-black/10 bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 
                 {/* Link - Fixed at Bottom */}
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-muted hover:text-primary inline-flex items-center text-sm font-medium"
-                >
-                  Learn More
-                  <svg 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                    strokeWidth="2" 
-                    className="w-4 h-4 ml-2" 
-                    viewBox="0 0 24 24"
+                {project.link && (
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-muted hover:text-primary inline-flex items-center text-sm font-medium"
                   >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
+                    Learn More
+                    <svg 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      strokeWidth="2" 
+                      className="w-4 h-4 ml-2" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>

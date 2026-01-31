@@ -48,8 +48,28 @@ export function Experience() {
       duration: "5 months",
       location: "remote",
       image: "/assets/icons/SC4K.avif",
-      details: "Tutored children grades 5-12 in Python programming basics and logic building through interactive projects and games. Also created curriculum for future tutors.",
+      details: "tutored children grades 5-12 in python programming basics and logic building through interactive projects and games. also created curriculum for future tutors.",
     },
+    {
+      id: 5,
+      title: "magna international",
+      role: "assembly line worker",
+      period: "may 2023 - september 2023",
+      duration: "5 months",
+      location: "newmarket, ontario",
+      image: "/assets/icons/magna.png",
+      details: "worked on the assembly line for a manufacturing company, really really reptitive work.",
+    },
+    {
+      id: 6,
+      title: "natures emporium",
+      role: "maintenace boy",
+      period: "october 2020 - aug 2021",
+      duration: "10 months",
+      location: "newmarket, ontario",
+      image: "/assets/icons/natures-emporium.webp",
+      details: "helped to make sure the store was tidy, helped out customers, and pushed lots and lots of carts!",
+    }
   ];
 
   const handleMouseEnter = (id: number): void => {
@@ -101,7 +121,7 @@ export function Experience() {
   return (
     <section id="experience" className="container mx-auto px-4 flex flex-col gap-6 mb-24 py-10">
       <h1 className="text-2xl font-bold text-primary lg:text-3xl"><span className="text-green-400">$</span> cd experience</h1>
-      <p className="text-sm text-muted">my past experiences that have shaped the way I work</p>
+      <p className="text-md text-muted">my past experiences that have shaped the way I work</p>
       <motion.div
         className="flex flex-col gap-4"
         variants={containerVariants}
@@ -123,29 +143,39 @@ export function Experience() {
             onMouseLeave={handleMouseLeave}
           >
             <div className="flex cursor-pointer">
-              <Image src={exp.image} alt={exp.title} width={50} height={50} className="rounded-full" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-full p-1">
+                <Image
+                  src={exp.image}
+                  alt={exp.title}
+                  width={48}
+                  height={48}
+                  className="h-full w-full object-contain"
+                />
+              </div>
               <div className="group ml-4 flex-grow flex-col items-center">
                 <div className="flex flex-col">
-                  <div className="flex items-center justify-between gap-x-2">
-                    <h3 className="inline-flex items-center justify-center text-lg font-bold leading-tight">
-                      {exp.title}
+                  <div className="flex items-start justify-between gap-x-2">
+                    <div className="flex items-start gap-1 min-w-0">
+                      <h3 className="text-base md:text-lg font-bold leading-tight break-words">
+                        {exp.title}
+                      </h3>
                       <motion.div
                         animate={{ rotate: expanded === exp.id ? 90 : 0 }}
                         transition={{ duration: 0.2 }}
-                        className="ml-1"
+                        className="mt-[2px] flex-shrink-0"
                       >
                         <ChevronRight size={16} />
                       </motion.div>
-                    </h3>
-                    <div className="text-right tabular-nums">
+                    </div>
+                    <div className="text-right tabular-nums text-sm md:text-base">
                       {exp.period}
                     </div>
                   </div>
                   <div className="flex items-center justify-between gap-x-2">
-                    <p className="text-sm text-muted">{exp.role}</p>
-                    <p className="text-right text-sm text-muted">{exp.duration}</p>
+                    <p className="text-sm md:text-md text-muted">{exp.role}</p>
+                    <p className="text-right text-sm md:text-md text-muted">{exp.duration}</p>
                   </div>
-                  <p className="text-sm text-muted">{exp.location}</p>
+                  <p className="text-sm md:text-md text-muted">{exp.location}</p>
                 </div>
               </div>
             </div>
@@ -159,7 +189,7 @@ export function Experience() {
               className="overflow-hidden"
             >
               <div className="mt-4 p-4 rounded-lg">
-                <p className="leading-relaxed text-muted text-sm">{exp.details}</p>
+                <p className="leading-relaxed text-muted text-sm md:text-md">{exp.details}</p>
               </div>
             </motion.div>
           </motion.div>

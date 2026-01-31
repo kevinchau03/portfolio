@@ -70,23 +70,6 @@ const Nav = () => {
           <Link href="/about" className="hover:text-primary transition-colors text-sm">
             about-me.md
           </Link>
-          <div className="flex gap-2">
-            <a
-              href="/Kevin_Chau_Software_Engineer_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary/10 text-primary px-3 py-1 rounded-md hover:bg-primary/20 transition-colors text-sm"
-            >
-              view
-            </a>
-            <a
-              download={true}
-              href="/Kevin_Chau_Software_Engineer_Resume.pdf"
-              className="bg-primary text-white px-3 py-1 rounded-md hover:bg-primary/80 transition-colors text-sm"
-            >
-              download
-            </a>
-          </div>
           {/* Theme toggle */}
           {mounted && (
             <button
@@ -180,30 +163,6 @@ const Nav = () => {
             >
               💻 experience
             </button>
-            
-            {/* Resume Links */}
-            <div className="pt-2 border-t border-border">
-              <p className="text-xs text-muted-foreground mb-2 px-3">Resume:</p>
-              <div className="flex flex-col gap-2">
-                <a
-                  href="/Kevin_Chau_Software_Engineer_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-primary/10 text-primary py-2 px-3 rounded-lg hover:bg-primary/20 transition-colors text-sm text-center"
-                  onClick={() => setIsOpen(false)}
-                >
-                  👁️ view resume
-                </a>
-                <a
-                  download={true}
-                  href="/Kevin_Chau_Software_Engineer_Resume.pdf"
-                  className="bg-primary text-white py-2 px-3 rounded-lg hover:bg-primary/80 transition-colors text-sm text-center"
-                  onClick={() => setIsOpen(false)}
-                >
-                  📥 download resume
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
