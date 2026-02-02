@@ -42,16 +42,6 @@ export function Experience() {
     },
     {
       id: 4,
-      title: "scratch coding for kids",
-      role: "python tutor",
-      period: "may 2022 - sept 2022",
-      duration: "5 months",
-      location: "remote",
-      image: "/assets/icons/SC4K.avif",
-      details: "tutored children grades 5-12 in python programming basics and logic building through interactive projects and games. also created curriculum for future tutors.",
-    },
-    {
-      id: 5,
       title: "magna international",
       role: "assembly line worker",
       period: "may 2023 - september 2023",
@@ -59,6 +49,16 @@ export function Experience() {
       location: "newmarket, ontario",
       image: "/assets/icons/magna.png",
       details: "worked on the assembly line for a manufacturing company, really really reptitive work.",
+    },
+    {
+      id: 5,
+      title: "scratch coding for kids",
+      role: "python tutor",
+      period: "may 2022 - sept 2022",
+      duration: "5 months",
+      location: "remote",
+      image: "/assets/icons/SC4K.avif",
+      details: "tutored children grades 5-12 in python programming basics and logic building through interactive projects and games. also created curriculum for future tutors.",
     },
     {
       id: 6,
