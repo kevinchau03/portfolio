@@ -36,10 +36,9 @@ export function Loading() {
   }, [currentIndex, loadingText])
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center dark:bg-background">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 backdrop-blur-sm">
       <div className="text-center space-y-8">
-        {/* Terminal-style loading */}
-        <div className="border border-border rounded-lg p-6 shadow-lg min-w-[300px] dark:bg-card dark:border-none">
+        <div className="section-shell min-w-[300px] p-6">
           <div className="flex items-center gap-2 mb-4 text-sm text-muted-foreground">
             <div className="flex gap-1">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -61,9 +60,9 @@ export function Loading() {
             </div>
             
             {/* Progress bar */}
-            <div className="w-full rounded-full h-2">
+            <div className="h-2 w-full rounded-full border-2 border-border bg-background-light">
               <div 
-                className="bg-primary h-2 rounded-full transition-all duration-300 ease-out"
+                className="h-full rounded-full bg-primary transition-all duration-300 ease-out"
                 style={{ width: `${progress}%` }}
               ></div>
             </div>

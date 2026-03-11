@@ -4,44 +4,39 @@ import LinkedinIcon from '@/public/assets/icons/icons8-linkedin.svg';
 
 export function Footer() {
     return (
-        <footer className="mt-auto">
+        <footer className="mt-auto pb-8">
             <div className="container mx-auto px-4">
-                <div className="border-t border-border"></div>
-                <div className="flex flex-col items-center text-center lg:justify-between w-full p-6 lg:flex-row gap-4">
-                    {/* Left side - Copyright */}
-                    <div className="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-4">
-                        <p className="text-sm text-muted-foreground ">
+                <div className="section-shell flex w-full flex-col items-center gap-4 p-6 text-center lg:flex-row lg:justify-between">
+                    <div className="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-4">
+                        <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                             &copy; 2026 Kevin Chau
                         </p>
-                        <div className="hidden lg:block w-1 h-1 bg-muted-foreground rounded-full"></div>
+                        <div className="hidden h-2 w-2 rounded-full border-2 border-border bg-accent lg:block"></div>
                         <p className="text-sm text-muted-foreground">
-                            if you&apos;re reading this, have a great day! ✨
+                            If you&apos;re reading this, have a great day.
                         </p>
                     </div>
-
-
-                    {/* Right side - Social Links */}
                     <div className="flex items-center gap-4">
-                        <span className="text-xs text-muted-foreground  mr-2">
+                        <span className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
                             ./socials
                         </span>
-                        <a 
-                            href="https://www.github.com/kevinchau03" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="group flex items-center justify-center p-2 rounded-lg hover:bg-primary/10 transition-all duration-200"
-                            aria-label="GitHub Profile"
-                        >
-                            <GithubIcon className="fill-current text-muted-foreground group-hover:text-primary transition-colors" />
-                        </a>
-                        <a 
-                            href="https://www.linkedin.com/in/kevin-chau03" 
+                        <a
+                            href="https://www.github.com/kevinchau03"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-center justify-center p-2 rounded-lg hover:bg-primary/10 transition-all duration-200"
+                            className="link-brutal p-2"
+                            aria-label="GitHub Profile"
+                        >
+                            <GithubIcon className="fill-current text-foreground" />
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/kevin-chau03"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="link-brutal p-2"
                             aria-label="LinkedIn Profile"
                         >
-                            <LinkedinIcon className="fill-current text-muted-foreground group-hover:text-primary transition-colors" />
+                            <LinkedinIcon className="fill-current text-foreground" />
                         </a>
                     </div>
                 </div>
