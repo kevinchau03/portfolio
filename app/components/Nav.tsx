@@ -56,6 +56,9 @@ const Nav = () => {
           <Link href="/about" className="link-brutal text-sm">
             about-me.md
           </Link>
+          <Link href="/blog" className="link-brutal justify-center text-sm" onClick={() => setIsOpen(false)}>
+              blog.md
+            </Link>
           <button
             onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
             aria-label="Toggle Dark Mode"
@@ -107,6 +110,9 @@ const Nav = () => {
             </Link>
             <Link href="/about" className="link-brutal justify-center text-sm" onClick={() => setIsOpen(false)}>
               about-me.md
+            </Link>
+            <Link href="/blog" className="link-brutal justify-center text-sm" onClick={() => setIsOpen(false)}>
+              blog.md
             </Link>
             <button
               onClick={() => {

@@ -1,9 +1,15 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+    title: 'About',
+    description: 'Learn more about Kevin Chau, his background, work style, and interests outside of shipping software.',
+};
 
 export default function Page() {
     return (
-        <main className="container mx-auto flex flex-col gap-8 px-4 py-10">
+        <main className="container mx-auto flex flex-col gap-8 px-4 py-10 mt-4">
             <section className="grid gap-8 md:grid-cols-[1.1fr_0.9fr]">
                 <div className="section-shell p-6 md:p-8">
                     <span className="section-kicker mb-4 w-fit">$ whoami</span>

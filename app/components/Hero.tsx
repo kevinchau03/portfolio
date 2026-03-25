@@ -29,6 +29,9 @@ export function Hero() {
       case 'cd experience':
         router.push('/#experience')
         break
+      case 'cd blog':
+        router.push('/blog')
+        break
       default:
         setInputValue('')
         break
@@ -157,7 +160,7 @@ export function Hero() {
                     type="text"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    placeholder="cd about, projects, experience..."
+                    placeholder="cd about, blog..."
                     className="w-full bg-transparent text-sm tracking-[0.08em] text-primary placeholder:text-muted-foreground/70 focus:outline-none"
                     autoFocus
                   />
