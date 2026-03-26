@@ -46,9 +46,8 @@ export function Hero() {
             <mark className="bg-accent">Hey there!</mark> I&apos;m <span className="text-primary">Kevin Chau</span>
           </h1>
           <p className="max-w-3xl text-base leading-7 text-muted-foreground md:text-lg">
-            I&apos;m a Computer Science graduate from <span className="font-bold text-primary">Western University</span>.
-            Take a peek around to learn more about my projects, experience, and what I&apos;m building now with
-            <span className="font-bold text-accent"> Grippr</span>.
+            A Computer Science graduate from <span className="font-bold text-primary">Western University</span>.
+            Take a peek around to learn more about me.
           </p>
         </div>
 

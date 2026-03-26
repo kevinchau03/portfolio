@@ -69,6 +69,10 @@
     background: rgb(var(--accent) / 0.75);
     color: rgb(var(--foreground));
   }
+
+  mark {
+    @apply bg-accent text-black dark:text-white;
+  }
 }
 
 html {
@@ -108,5 +112,11 @@ li {
   .link-brutal:hover {
     transform: translate(-3px, -3px);
     box-shadow: 6px 6px 0 0 rgb(var(--shadow-strong));
+  }
+
+  .text-highlight {
+    @apply inline bg-accent px-1 text-black dark:text-white;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
 }

@@ -48,7 +48,9 @@ function Section({
 }>) {
     return (
         <section className="space-y-5">
-            <h2 className="text-2xl font-black uppercase leading-tight md:text-3xl">{title}</h2>
+            <h2 className="text-2xl font-black uppercase leading-tight md:text-3xl">
+                <span className="text-highlight">{title}</span>
+            </h2>
             <div className="space-y-5 text-base leading-8 text-muted-foreground">{children}</div>
         </section>
     );
@@ -57,7 +59,7 @@ function Section({
 export default function Page() {
     return (
         <main className="container mx-auto px-4 py-10 mt-4">
-            <article className="mx-auto max-w-3xl">
+            <article className="mx-auto">
                 <header className="mb-12 border-b-2 border-border pb-8">
                     <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Constant Closer Case Study</p>
                     <h1 className="mt-4 text-3xl font-black uppercase leading-[1.02] md:text-5xl">
@@ -69,7 +71,7 @@ export default function Page() {
                     <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
                         <p>March 25, 2026</p>
                         <p>8 minute read</p>
-                        <p className="bg-accent">Internship Lesson</p>
+                        <p><span className="text-highlight">Internship Lesson</span></p>
                     </div>
                 </header>
 
@@ -100,7 +102,7 @@ export default function Page() {
                             At this point I was panicking. My first big feature and I broke the system. I couldn&apos;t understand it, it worked locally on my machine, it worked on the staging environment too. So what went wrong?
                         </p>
                         <p>
-                            That&apos;s when I came to realize, my approach could not handle real production data. Our clients had email lists ranging from 50,000 to 100,000 contacts. This meant that not only was I trying to fetch all those emails sent, but the potentially millions of tracked actions tied to a certain campaign. One customer alone had around ~1 million activity records.
+                            That&apos;s when I came to realize, my approach could not handle real production data. Our clients had email lists ranging from <span className="font-bold">50,000 to 100,000 contacts</span>. This meant that not only was I trying to fetch all those emails sent, but the potentially millions of tracked actions tied to a certain campaign. One customer alone had around ~1 million activity records.
                         </p>
                         <p>
                             With my implementation of the activity feed it was trying to fetch and render it all. This lead to:

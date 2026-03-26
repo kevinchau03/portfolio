@@ -13,14 +13,11 @@ export default function Page() {
             <section className="grid gap-8 md:grid-cols-[1.1fr_0.9fr]">
                 <div className="section-shell p-6 md:p-8">
                     <span className="section-kicker mb-4 w-fit">$ whoami</span>
-                    <h1 className="mb-5 text-xl font-black uppercase md:text-2xl">
-                        Software engineer with startup instincts.
-                    </h1>
                     <p className="mb-4 text-base leading-7 text-muted-foreground">
-                        I&apos;m based in <span className="font-bold text-primary">Newmarket, Ontario, Canada</span>. I fell in love with computers when I first learned to download songs off of Youtube-to-mp3.
+                     I fell in love with tech at an early age when I first learned to jailbreak my iPod touch. Fasincated with the idea of bending software to my will, I started learning how to code in high school and eventually pursued a Computer Science degree at <span className="font-bold text-primary">Western University</span>.
                     </p>
                     <p className="text-base leading-7 text-muted-foreground">
-                        Most of my experience has been inside of small, scrappy teams, where the job is rarely just one job. That sort of environment has helped me develop a wide range of skills.
+                        Most of my experience has been inside of small, scrappy teams, where we build fast and fix even faster. That sort of environment helped shape my work style and approach to software development.
                     </p>
                     <p className="mt-4 text-base leading-7 text-muted-foreground">
                         I love connecting with founders, builders, and curious minds. If you've read this far, let's connect! You can find me on my socials below.
@@ -39,7 +36,7 @@ export default function Page() {
                     <div className="brutal-card bg-secondary p-5">
                         <p className="mb-3 text-sm font-black uppercase tracking-[0.14em] text-foreground">Current setup</p>
                         <ul className="space-y-2 text-sm leading-6 text-foreground ml-4 list-disc">
-                            <li>Laptop: 2019 MacBook Pro</li>
+                            <li>Laptop: 2019 MacBook Pro (on it's last leg)</li>
                             <li>Keyboard: GMMK TKL RGB</li>
                             <li>Switches: Akko Creamy Blues</li>
                             <li>Mouse: Razer Viper Mini</li>
