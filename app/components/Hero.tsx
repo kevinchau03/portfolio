@@ -52,43 +52,48 @@ export function Hero() {
         </div>
 
         <div className="grid items-stretch gap-6 lg:grid-cols-[320px_1fr]">
-          <div className="brutal-card relative overflow-hidden bg-secondary p-5">
-            <div className="absolute right-4 top-4 brutal-chip bg-accent">tap to rotate</div>
-            <figure className="relative mx-auto mt-8 w-full max-w-[240px] pb-6">
-              <div className="relative h-[300px] w-full">
-                {profilePhotos.map((photo, index) => {
-                  const isActive = index === activePhotoIndex
-                  const offset = (index - activePhotoIndex + profilePhotos.length) % profilePhotos.length
+          <figure className="flex min-h-[390px] flex-col items-center justify-center gap-7 px-5 py-8">
+            <button
+              type="button"
+              onClick={() => setActivePhotoIndex((prev) => (prev + 1) % profilePhotos.length)}
+              className="relative h-[290px] w-[220px] cursor-pointer rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[24px] focus-visible:outline-primary sm:h-[300px] sm:w-[240px]"
+              aria-label="Show next photo"
+              aria-describedby="hero-photo-status"
+            >
+              {profilePhotos.map((photo, index) => {
+                const offset = (index - activePhotoIndex + profilePhotos.length) % profilePhotos.length
+                const poses = [
+                  { x: -3, y: -4, angle: -5 },
+                  { x: 16, y: 7, angle: 9 },
+                  { x: -14, y: 12, angle: -12 },
+                ]
+                const pose = poses[offset]
 
-                  return (
-                    <button
-                      key={photo}
-                      type="button"
-                      onClick={() => setActivePhotoIndex((prev) => (prev + 1) % profilePhotos.length)}
-                      className={[
-                        'absolute left-0 top-0 h-full w-full overflow-hidden rounded-[24px] border-2 border-border bg-card transition-all duration-300',
-                        isActive ? 'z-30 cursor-pointer' : 'z-10 pointer-events-none',
-                      ].join(' ')}
-                      style={{
-                        transform: `translate(${offset * 12}px, ${offset * 10}px) rotate(${offset * 2}deg) scale(${1 - offset * 0.04})`,
-                        opacity: 1 - offset * 0.15,
-                      }}
-                      aria-label={`Show photo ${index + 1}`}
-                    >
-                      <Image
-                        src={photo}
-                        alt={`Kevin Chau photo ${index + 1}`}
-                        width={250}
-                        height={300}
-                        className="h-full w-full object-cover"
-                      />
-                    </button>
-                  )
-                })}
-              </div>
-            </figure>
-          </div>
-
+                return (
+                  <span
+                    key={photo}
+                    className="pointer-events-none absolute inset-0 block overflow-hidden rounded-sm border border-black/10 bg-white p-2 pb-7 shadow-[0_8px_18px_rgba(0,0,0,0.22)] transition-transform duration-500 ease-out motion-reduce:transition-none"
+                    style={{
+                      transform: `translate(${pose.x}px, ${pose.y}px) rotate(${pose.angle}deg)`,
+                      zIndex: profilePhotos.length - offset,
+                    }}
+                    aria-hidden={offset !== 0}
+                  >
+                    <Image
+                      src={photo}
+                      alt={`Kevin Chau photo ${index + 1}`}
+                      width={250}
+                      height={300}
+                      className="h-full w-full object-cover"
+                    />
+                  </span>
+                )
+              })}
+            </button>
+            <figcaption id="hero-photo-status" className="text-sm text-muted-foreground" aria-live="polite" aria-atomic="true">
+              Click to flip · {activePhotoIndex + 1} / {profilePhotos.length}
+            </figcaption>
+          </figure>
           <div className="section-shell flex h-full flex-col gap-6 p-5 md:p-7">
             <div className="flex items-center gap-2 mb-4 text-sm text-muted-foreground">
               <div className="flex gap-1">
