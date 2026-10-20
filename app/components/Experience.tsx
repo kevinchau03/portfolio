@@ -7,7 +7,6 @@ export function Experience() {
       title: 'td bank',
       role: 'customer experience associate',
       period: 'aug 2026 - present',
-      duration: '2 months',
       location: 'aurora, ontario',
       image: '/assets/icons/td-bank.webp',
       details: 'Working in a fast-paced environment, assisting customers with their banking needs and providing excellent service.',
@@ -17,8 +16,7 @@ export function Experience() {
       title: 'cineplex',
       role: 'cast member',
       period: 'march 2026 - september 2026',
-      duration: '8 months',
-      location: 'remote',
+      location: 'aurora, ontario',
       image: '/assets/icons/cineplex.jpg',
       details: 'Popping popcorn and providing guests with a great movie experience!',
     },
@@ -27,7 +25,6 @@ export function Experience() {
       title: 'constant closer',
       role: 'software engineer',
       period: 'march 2025 - august 2025',
-      duration: '8 months',
       location: 'remote',
       image: '/assets/icons/constantcloser.svg',
       details: 'Worked on the Constant Closer platform, an AI email sales assistant for teams automating and optimizing outreach.',
@@ -37,7 +34,6 @@ export function Experience() {
       title: 'hitmeup.ai',
       role: 'software engineering intern',
       period: 'may 2024 - sept 2024',
-      duration: '5 months',
       location: 'remote',
       image: '/assets/icons/HitMeUp.svg',
       details: 'Contributed to the mobile and web app for HitMeUp, an AI gatekeeper used by creators and professionals to capture leads automatically.',
@@ -47,7 +43,6 @@ export function Experience() {
       title: 'western ai club',
       role: 'senior director of communications',
       period: 'oct 2022 - sept 2024',
-      duration: '2 years, 3 months',
       location: 'london, ontario',
       image: '/assets/icons/WesternAI.svg',
       details: 'Led communications, organized outreach programs, and built event promotion that grew visibility for the club community.',
@@ -57,7 +52,6 @@ export function Experience() {
       title: 'magna international',
       role: 'assembly line worker',
       period: 'may 2023 - september 2023',
-      duration: '5 months',
       location: 'newmarket, ontario',
       image: '/assets/icons/magna.png',
       details: 'Worked on the assembly line in a manufacturing plant and learned what repetitive, process-heavy work actually feels like.',
@@ -67,7 +61,6 @@ export function Experience() {
       title: 'scratch coding for kids',
       role: 'python tutor',
       period: 'may 2022 - sept 2022',
-      duration: '5 months',
       location: 'remote',
       image: '/assets/icons/SC4K.avif',
       details: 'Tutored students in Python fundamentals and logic building through interactive projects, then created curriculum for future tutors.',
@@ -77,7 +70,6 @@ export function Experience() {
       title: 'natures emporium',
       role: 'maintenance boy',
       period: 'october 2020 - aug 2021',
-      duration: '10 months',
       location: 'newmarket, ontario',
       image: '/assets/icons/natures-emporium.webp',
       details: 'Kept the store tidy, helped customers, and moved a lot of carts. Useful work ethic training, no glamour involved.',
@@ -134,7 +126,6 @@ export function Experience() {
                       <p className="mt-3 max-w-[65ch] text-sm leading-7 text-muted-foreground">{experience.details}</p>
                       <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-xs capitalize leading-6 text-muted-foreground">
                         <span>{experience.location}</span>
-                        <span>{experience.duration}</span>
                       </div>
                     </div>
                   </article>

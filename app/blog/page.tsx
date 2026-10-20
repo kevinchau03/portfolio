@@ -24,8 +24,8 @@ export default function Page() {
             <section aria-label="Blog posts" className="border-t border-border/25">
                 <article className="grid gap-6 py-10 md:grid-cols-[160px_minmax(0,1fr)] md:gap-10 md:py-12 lg:gap-16">
                     <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm leading-6 text-muted-foreground md:flex-col md:gap-1">
-                        <time dateTime="2026-03-23">March 23rd 2026</time>
-                        <p>10 minute read</p>
+                        <time dateTime="2026-03-25">March 25, 2026</time>
+                        <p>8 minute read</p>
                     </div>
 
                     <div className="min-w-0 max-w-3xl">
@@ -38,7 +38,7 @@ export default function Page() {
                                 href="/blog/activity-feed"
                                 className="cursor-pointer decoration-primary decoration-2 underline-offset-[6px] hover:underline focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary active:text-primary"
                             >
-                                How I Reduced My Activity Feed&apos;s Load Time by 98%.
+                                How I Reduced My Activity Feed&apos;s Load Time by 99%.
                             </Link>
                         </h2>
                         <p className="mt-5 max-w-[65ch] text-base leading-8 text-muted-foreground">

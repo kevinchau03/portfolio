@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { FileDown, Github, Linkedin } from 'lucide-react'
+import { FileDown, Github, Linkedin, Mail } from 'lucide-react'
 
 export function Hero() {
   const [inputValue, setInputValue] = useState('')
@@ -148,6 +148,14 @@ export function Hero() {
                     >
                       <FileDown className="h-4 w-4" />
                       resume
+                    </a>
+                    <a
+                      href="mailto:kev.chau03@gmail.com"
+                      className="link-brutal text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                      aria-label="Email Kevin Chau at kev.chau03@gmail.com"
+                    >
+                      <Mail className="h-4 w-4" />
+                      email
                     </a>
                   </div>
                 </div>

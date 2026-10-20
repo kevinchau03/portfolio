@@ -19,7 +19,7 @@ const paginationSnippet = `from django.core.paginator import Paginator
     page_obj = paginator.get_page(request.GET.get("page"));`
 
 export const metadata: Metadata = {
-    title: 'How I Reduced Activity Feed Load Time by 98%',
+    title: 'How I Reduced Activity Feed Load Time by 99%',
     description: 'A case study on reducing Constant Closer activity feed latency from seconds to under 100 milliseconds.',
     alternates: {
         canonical: '/blog/activity-feed',
@@ -63,7 +63,7 @@ export default function Page() {
                 <header className="mb-12 border-b border-border/30 pb-10 md:mb-16">
                     <p className="text-sm font-bold text-primary">Constant Closer Case Study</p>
                     <h1 className="mt-5 text-3xl font-black leading-[1.15] tracking-tight md:text-5xl">
-                        How I Reduced Activity Feed Load Time by 98%
+                        How I Reduced Activity Feed Load Time by 99%
                     </h1>
                     <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
                         A case study on reducing load time from roughly 10 seconds to under 100 milliseconds by fixing bottlenecks in the database, backend, and frontend.

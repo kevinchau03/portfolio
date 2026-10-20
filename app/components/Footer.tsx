@@ -16,7 +16,13 @@ export function Footer() {
                             If you&apos;re reading this, have a great day.
                         </p>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-wrap items-center justify-center gap-4">
+                        <a
+                            href="mailto:kev.chau03@gmail.com"
+                            className="inline-flex min-h-11 items-center text-sm underline decoration-primary underline-offset-4 hover:text-primary focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                        >
+                            kev.chau03@gmail.com
+                        </a>
                         <span className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
                             ./socials
                         </span>
