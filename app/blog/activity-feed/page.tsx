@@ -28,11 +28,11 @@ export const metadata: Metadata = {
 
 function CodeBlock({ code, label }: { code: string; label: string }) {
     return (
-        <div className="my-6 overflow-hidden rounded-xl border-2 border-border bg-[#1b2430] text-[#f8f0e6] shadow-brutal-soft">
-            <div className="border-b-2 border-border/70 bg-[#11161d] px-4 py-2">
-                <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#f8f0e6]/70">{label}</span>
+        <div className="my-6 min-w-0 overflow-hidden rounded-lg border border-border/25 bg-[#1b2430] text-[#f8f0e6]">
+            <div className="border-b border-white/10 bg-[#11161d] px-5 py-3">
+                <span className="text-xs font-medium text-[#f8f0e6]/80">{label}</span>
             </div>
-            <pre className="overflow-x-auto p-4 text-sm leading-7">
+            <pre tabIndex={0} aria-label={label} className="overflow-x-auto p-5 text-xs leading-7 focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-primary sm:text-sm">
                 <code>{code}</code>
             </pre>
         </div>
@@ -48,49 +48,49 @@ function Section({
 }>) {
     return (
         <section className="space-y-5">
-            <h2 className="text-2xl font-black uppercase leading-tight md:text-3xl">
+            <h2 className="text-2xl font-black leading-snug tracking-tight md:text-3xl">
                 <span className="text-highlight">{title}</span>
             </h2>
-            <div className="space-y-5 text-base leading-8 text-muted-foreground">{children}</div>
+            <div className="space-y-5 text-base leading-8 text-foreground/85">{children}</div>
         </section>
     );
 }
 
 export default function Page() {
     return (
-        <main className="container mx-auto px-4 py-10 mt-4">
-            <article className="mx-auto">
-                <header className="mb-12 border-b-2 border-border pb-8">
-                    <p className="text-sm font-bold uppercase tracking-[0.16em] text-primary">Constant Closer Case Study</p>
-                    <h1 className="mt-4 text-3xl font-black uppercase leading-[1.02] md:text-5xl">
+        <main className="container mx-auto px-4 pb-16 pt-10 md:pb-24 md:pt-16">
+            <article className="mx-auto max-w-[76ch]">
+                <header className="mb-12 border-b border-border/30 pb-10 md:mb-16">
+                    <p className="text-sm font-bold text-primary">Constant Closer Case Study</p>
+                    <h1 className="mt-5 text-3xl font-black leading-[1.15] tracking-tight md:text-5xl">
                         How I Reduced Activity Feed Load Time by 98%
                     </h1>
                     <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
                         A case study on reducing load time from roughly 10 seconds to under 100 milliseconds by fixing bottlenecks in the database, backend, and frontend.
                     </p>
                     <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
-                        <p>March 25, 2026</p>
+                        <time dateTime="2026-03-25">March 25, 2026</time>
                         <p>8 minute read</p>
                         <p><span className="text-highlight">Internship Lesson</span></p>
                     </div>
                 </header>
 
-                <div className="space-y-12">
+                <div className="space-y-12 md:space-y-16">
                     <Section title="My First Feature">
                         <p>
                             One day during daily stand up, our founder told me that I&apos;d be working on my first big feature for the platform, an activity feed in the user dashboard. Our customers needed insight into how their AI agents were performing. The activity feed would show a real-time list of actions: emails sent, clicks, conversions, unsubscribes, everything they need to evaluate their campaigns.
                         </p>
                         <figure className="my-8">
-                            <div className="overflow-hidden rounded-xl border-2 border-border bg-card shadow-brutal-soft">
+                            <div className="overflow-hidden rounded-lg border border-border/25 bg-card">
                                 <Image
                                     src="/assets/activity_feed.jpg"
                                     alt="Screenshot of Activity Feed"
                                     width={1200}
                                     height={700}
-                                    className="h-auto w-full object-cover"
+                                    sizes="(min-width: 1024px) 760px, 100vw" className="h-auto w-full object-cover"
                                 />
                             </div>
-                            <figcaption className="mt-3 text-center text-sm italic text-muted-foreground">Figure 1. Screen Shot of Activity Feed</figcaption>
+                            <figcaption className="mt-3 text-left text-xs leading-6 text-muted-foreground">Figure 1. Screen Shot of Activity Feed</figcaption>
                         </figure>
                         <p>
                             I was hyped. This was going to be a big step from fixing bugs and completing small tickets, now I had the chance to own a major piece of the product end-to-end. I was ready to show off my skills and make an impact. My approach was straightforward, fetch all relevant message threads from the backend, transform that data and render it on the frontend. After hacking it out for a bit, the day finally came to push to production... and <span className="font-bold">the website timed out</span>. Great.
@@ -117,13 +117,13 @@ export default function Page() {
                         </p>
                     </Section>
 
-                    <section className="rounded-xl border-2 border-border bg-card p-6 shadow-brutal-soft">
-                        <h3 className="text-xl font-black uppercase leading-tight md:text-2xl">The Three Bottlenecks</h3>
-                        <div className="mt-5 space-y-5 text-base leading-8 text-muted-foreground">
+                    <section className="border-l-4 border-accent py-1 pl-5 md:pl-7">
+                        <h3 className="text-xl font-bold leading-snug md:text-2xl">The Three Bottlenecks</h3>
+                        <div className="mt-5 space-y-5 text-base leading-8 text-foreground/85">
                             <p>
                                 After examining the code base and countless logs, I identified three major bottlenecks slowing down the feed:
                             </p>
-                            <ol className="ml-5 space-y-2 text-foreground">
+                            <ol className="ml-5 space-y-2 text-foreground [&>li]:list-decimal">
                                 <li>Expensive database queries.</li>
                                 <li>Backend inefficiency.</li>
                                 <li>Improper frontend rendering.</li>
@@ -142,8 +142,8 @@ export default function Page() {
                             My original queries were doing full table scans and expensive joins across very large tables. This was not good for scaling as with more users onboarded meant more emails and events to create. As mentioned earlier, some clients could potentially deal with millions of activity records, and these queries were trying to return all the rows at once. Creating a nightmare for performance.
                         </p>
 
-                        <div className="rounded-xl border border-border bg-card px-5 py-4">
-                            <h3 className="text-lg font-black uppercase leading-tight text-foreground">Adding Proper Indexing</h3>
+                        <div className="pt-3">
+                            <h3 className="text-lg font-bold leading-7 text-foreground">Adding Proper Indexing</h3>
                             <div className="mt-3 space-y-4">
                                 <p>
                                     To improve query performance, I decided to create indexes. I analyzed the most accessed columns and added them on fields such as timestamps and foreign keys. This change resulted in much faster lookup times.
@@ -154,8 +154,8 @@ export default function Page() {
                             </div>
                         </div>
 
-                        <div className="rounded-xl border border-border bg-card px-5 py-4">
-                            <h3 className="text-lg font-black uppercase leading-tight text-foreground">Reducing the Query Scope</h3>
+                        <div className="pt-3">
+                            <h3 className="text-lg font-bold leading-7 text-foreground">Reducing the Query Scope</h3>
                             <div className="mt-3 space-y-4">
                                 <p>
                                     Another optimization that had a significant impact was reducing the query scope. Instead of fetching all rows from the database, we focused on limiting our queries to only retrieve the data necessary for the current view. By narrowing the result set, we reduced unnecessary computation and data transfer.
@@ -175,8 +175,8 @@ export default function Page() {
                             He helped point out to me that my logic was performing unnecessary data transformation and fetching more data than needed before sending the response to the frontend. Optimizing the database query helped but if I was sending a request every single time a new action hit the database, that meant unnecessary re-rendering and therefore slower load times.
                         </p>
 
-                        <div className="rounded-xl border border-border bg-card px-5 py-4">
-                            <h3 className="text-lg font-black uppercase leading-tight text-foreground">Introducing Redis Caching</h3>
+                        <div className="pt-3">
+                            <h3 className="text-lg font-bold leading-7 text-foreground">Introducing Redis Caching</h3>
                             <div className="mt-3 space-y-4">
                                 <p>
                                     To address this, I implemented Redis caching to store the results of expensive database queries and computations. By caching the data, we were able to serve subsequent requests quickly, eliminating the need to recompute the same data for every request.
@@ -188,8 +188,8 @@ export default function Page() {
                             </div>
                         </div>
 
-                        <div className="rounded-xl border border-border bg-card px-5 py-4">
-                            <h3 className="text-lg font-black uppercase leading-tight text-foreground">Consider Trade-offs: Real-Time vs Performance</h3>
+                        <div className="pt-3">
+                            <h3 className="text-lg font-bold leading-7 text-foreground">Consider Trade-offs: Real-Time vs Performance</h3>
                             <div className="mt-3 space-y-4">
                                 <p>
                                     Of course, there are trade-offs when using caching. While it would be ideal for users to see real-time updates, my implementation meant showing users stale data for 5 minutes. However, given the volume of data we were handling, the trade-off between performance versus real-time data was necessary. This was done to allow clients to have the best user experience possible.
@@ -228,8 +228,8 @@ export default function Page() {
                     </Section>
                 </div>
 
-                <footer className="mt-12 border-t-2 border-border pt-6">
-                    <Link href="/blog" className="text-sm font-bold uppercase text-primary">
+                <footer className="mt-16 border-t border-border/30 pt-6">
+                    <Link href="/blog" className="inline-flex min-h-11 cursor-pointer items-center text-sm font-bold text-foreground underline decoration-primary underline-offset-4 hover:text-primary focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary active:opacity-70">
                         Back to blog
                     </Link>
                 </footer>

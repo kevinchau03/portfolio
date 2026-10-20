@@ -11,46 +11,47 @@ export const metadata: Metadata = {
 
 export default function Page() {
     return (
-        <main className="container mx-auto px-4 py-10 mt-4">
-            <section className="mx-auto">
-                <div className="mb-10">
-                    <h1 className="text-3xl font-black uppercase leading-tight md:text-5xl">
-                        <mark className="bg-accent">Deep dive</mark> into my engineering work and product decisions.
-                    </h1>
-                    <p className="mt-5 text-base leading-7 text-muted-foreground md:text-lg">
-                        Case studies, lessons learned, and the stories behind the work I do.
-                    </p>
-                </div>
+        <main className="container mx-auto px-4 pb-20 pt-12 md:pb-28 md:pt-16">
+            <header className="grid gap-6 pb-12 md:pb-16 lg:grid-cols-[1.35fr_0.8fr] lg:items-end lg:gap-16">
+                <h1 className="max-w-3xl text-3xl font-black leading-tight tracking-tight md:text-5xl">
+                    Deep dive into my engineering work and product decisions.
+                </h1>
+                <p className="max-w-sm text-base leading-8 text-muted-foreground">
+                    Case studies, lessons learned, and the stories behind the work I do.
+                </p>
+            </header>
 
-                <div className="grid gap-5">
-                    <article className="brutal-card p-6 md:p-7">
-                        <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
-                            <div className="max-w-3xl">
-                                <div className="mb-4 flex flex-wrap gap-2">
-                                    <span className="brutal-chip">Performance</span>
-                                    <span className="brutal-chip">Case Study</span>
-                                </div>
-                                <h2 className="text-2xl font-black uppercase leading-tight md:text-3xl">
-                                    How I Reduced My Activity Feed's Load Time by 98%.
-                                </h2>
-                                <p className="mt-4 text-base leading-7 text-muted-foreground">
-                                    In this article, I break down how I took the activity feed from roughly 10 seconds to under 100 milliseconds through micro-optimizations and architectural changes.
-                                </p>
-                            </div>
+            <section aria-label="Blog posts" className="border-t border-border/25">
+                <article className="grid gap-6 py-10 md:grid-cols-[160px_minmax(0,1fr)] md:gap-10 md:py-12 lg:gap-16">
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm leading-6 text-muted-foreground md:flex-col md:gap-1">
+                        <time dateTime="2026-03-23">March 23rd 2026</time>
+                        <p>10 minute read</p>
+                    </div>
 
-                            <div className="min-w-40 text-sm text-muted-foreground md:text-right">
-                                <p>March 23rd 2026</p>
-                                <p className="mt-1">10 minute read</p>
-                            </div>
-                        </div>
-
-                        <div className="mt-6 pt-6">
-                            <Link href={`/blog/activity-feed`} className="text-sm font-bold uppercase text-primary">
-                                Read post →
+                    <div className="min-w-0 max-w-3xl">
+                        <ul aria-label="Post topics" className="mb-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+                            <li className="list-none">Performance</li>
+                            <li className="list-none">Case Study</li>
+                        </ul>
+                        <h2 className="text-2xl font-bold leading-snug tracking-tight md:text-3xl lg:text-4xl">
+                            <Link
+                                href="/blog/activity-feed"
+                                className="cursor-pointer decoration-primary decoration-2 underline-offset-[6px] hover:underline focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary active:text-primary"
+                            >
+                                How I Reduced My Activity Feed&apos;s Load Time by 98%.
                             </Link>
-                        </div>
-                    </article>
-                </div>
+                        </h2>
+                        <p className="mt-5 max-w-[65ch] text-base leading-8 text-muted-foreground">
+                            In this article, I break down how I took the activity feed from roughly 10 seconds to under 100 milliseconds through micro-optimizations and architectural changes.
+                        </p>
+                        <Link
+                            href="/blog/activity-feed"
+                            className="mt-6 inline-flex min-h-11 cursor-pointer items-center font-bold text-foreground underline decoration-primary decoration-2 underline-offset-[6px] hover:text-primary focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary active:opacity-70"
+                        >
+                            Read post
+                        </Link>
+                    </div>
+                </article>
             </section>
         </main>
     );
